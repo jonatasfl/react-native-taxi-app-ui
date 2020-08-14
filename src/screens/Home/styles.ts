@@ -14,8 +14,8 @@ export const TopArea = styled.View`
   width: 100%;
   height: 50%;
   background: ${color.primary};
-  border-bottom-left-radius: 300;
-  border-bottom-right-radius: 300;
+  border-bottom-left-radius: 300px;
+  border-bottom-right-radius: 300px;
 `;
 
 export const CabImg = styled.Image`

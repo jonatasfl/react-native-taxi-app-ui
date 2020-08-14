@@ -1,20 +1,26 @@
 import styled from 'styled-components/native';
-import { Dimensions } from 'react-native';
+import { Dimensions, Platform } from 'react-native';
 
 import { color, font } from '../../style-vars';
 
-export const Container = styled.SafeAreaView`
+export const Container = styled.KeyboardAvoidingView.attrs({
+  enabled: Platform.OS === 'ios',
+  behavior: 'padding',
+})`
   align-items: center;
-  padding: 15%;
+  justify-content: flex-end;
+  padding-left: 15%;
+  padding-right: 15%;
 `;
 
 export const IconContainer = styled.View`
-  align-items:center;
+  align-items: center;
   justify-content: center;
-  width: ${Dimensions.get('window').width / 1.9}
-  height: ${Dimensions.get('window').width / 1.9};
-  border-radius: ${Dimensions.get('window').width / 2};
+  width: ${Dimensions.get('window').width / 1.9}px;
+  height: ${Dimensions.get('window').width / 1.9}px;
+  border-radius: ${Dimensions.get('window').width / 2}px;
   background: ${color.primary};
+  margin-top: 15%;
   margin-bottom: 21px;
 `;
 
@@ -32,4 +38,11 @@ export const Description = styled.Text`
   font-size: 16px;
   text-align: center;
   color: ${color.primary};
+  margin-bottom: 35px;
+`;
+
+export const CodeContainer = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 `;

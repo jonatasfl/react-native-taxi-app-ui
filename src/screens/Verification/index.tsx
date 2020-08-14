@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { TextInput } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
+import CodeInput from '../../components/CodeInput';
+
+import envelopeImg from '../../assets/envelope.png';
 import * as S from './styles';
 
 const Verification: React.FC = () => {
+  const codeRef2 = useRef<TextInput>();
+  const codeRef3 = useRef<TextInput>();
+  const codeRef4 = useRef<TextInput>();
+
+  function focusNext(ref: React.RefObject<TextInput>) {
+    ref.current?.focus();
+  }
+
   return (
     <S.Container>
       <StatusBar style="dark" />
       <S.IconContainer>
-        <S.Envelope source={require('../../assets/envelope.png')} />
+        <S.Envelope source={envelopeImg} />
       </S.IconContainer>
       <S.Title>
         <S.Title>Verification </S.Title>
@@ -21,6 +33,12 @@ const Verification: React.FC = () => {
         </S.Description>
         <S.Description bold>+994 555 66 77</S.Description>
       </S.Description>
+      <S.CodeContainer>
+        <CodeInput onChangeText={() => focusNext(codeRef2)} autoFocus />
+        <CodeInput onChangeText={() => focusNext(codeRef3)} ref={codeRef2} />
+        <CodeInput onChangeText={() => focusNext(codeRef4)} ref={codeRef3} />
+        <CodeInput ref={codeRef4} />
+      </S.CodeContainer>
     </S.Container>
   );
 };
