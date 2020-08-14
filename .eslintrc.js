@@ -42,6 +42,7 @@ module.exports = {
       },
     ],
     'default-case': 'off',
+    'camelcase': 'off',
     'no-use-before-define': 'off',
   },
   settings: {

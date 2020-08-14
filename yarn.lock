@@ -1021,6 +1021,11 @@
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
   integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
 
+"@expo-google-fonts/open-sans@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/open-sans/-/open-sans-0.1.0.tgz#3825d48afa7b9176af7202be28067ad774536819"
+  integrity sha512-haXOb/9IF8UxXIGRUIrXqPDJF/QIicuJUqbBrPUshqJ8q8On4/Om1qPltlfl/ijn/15LYyhIQJRYKfrigJmO4g==
+
 "@expo/configure-splash-screen@0.1.13":
   version "0.1.13"
   resolved "https://registry.yarnpkg.com/@expo/configure-splash-screen/-/configure-splash-screen-0.1.13.tgz#9f974146d716ffc03461e4d2deb7bfb22826e56a"

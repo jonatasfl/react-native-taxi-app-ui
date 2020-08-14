@@ -12,6 +12,7 @@ const Home: React.FC = () => {
       <S.TopArea>
         <S.CabImg source={cabImg} />
       </S.TopArea>
+      <S.Title>Welcome to Roxio</S.Title>
     </S.Container>
   );
 };
