@@ -14,12 +14,14 @@ const Home: React.FC = () => {
       <S.TopArea>
         <S.CabImg source={cabImg} />
       </S.TopArea>
-      <S.Title>
-        <S.Title>Welcome to </S.Title>
-        <S.TitleBold>Roxio</S.TitleBold>
-      </S.Title>
-      <PhoneInput />
-      <Button onPress={() => console.log('clicou')}>Get Started</Button>
+      <S.BottomArea>
+        <S.Title>
+          <S.Title>Welcome to </S.Title>
+          <S.TitleBold>Roxio</S.TitleBold>
+        </S.Title>
+        <PhoneInput />
+        <Button onPress={() => console.log('clicou')}>Get Started</Button>
+      </S.BottomArea>
     </S.Container>
   );
 };

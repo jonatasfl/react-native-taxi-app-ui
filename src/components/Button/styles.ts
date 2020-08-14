@@ -5,7 +5,7 @@ import { color, font } from '../../style-vars';
 export const Container = styled.TouchableHighlight`
   align-items: center;
   justify-content: center;
-  width: 80%;
+  width: 100%;
   background: ${color.primary};
   border-radius: 45px;
   height: 55px;

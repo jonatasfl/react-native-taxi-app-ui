@@ -5,11 +5,12 @@ import { color } from '../../style-vars';
 export const Container = styled.View`
   flex-direction: row;
   align-items: center;
-  width: 80%;
+  width: 100%;
   height: 55px;
   border: 1px solid ${color.gray};
   border-radius: 45px;
   padding: 0 24px;
+  margin-bottom: 24px;
 `;
 
 export const Code = styled.Text`
