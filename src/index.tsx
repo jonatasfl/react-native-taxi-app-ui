@@ -3,20 +3,19 @@ import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import HomeScreen from './screens/Home';
+import Home from './screens/Home';
+import Verification from './screens/Verification';
 
 const Stack = createStackNavigator();
 
 const Index: React.FC = () => {
   return (
-    <>
-      <StatusBar style="auto" />
-      <NavigationContainer>
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="Home" component={HomeScreen} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Verification" component={Verification} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
