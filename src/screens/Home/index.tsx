@@ -1,8 +1,9 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 
-import cabImg from '../../assets/cab.png';
+import PhoneInput from '../../components/PhoneInput';
 
+import cabImg from '../../assets/cab.png';
 import * as S from './styles';
 
 const Home: React.FC = () => {
@@ -12,7 +13,11 @@ const Home: React.FC = () => {
       <S.TopArea>
         <S.CabImg source={cabImg} />
       </S.TopArea>
-      <S.Title>Welcome to Roxio</S.Title>
+      <S.Title>
+        <S.Title>Welcome to </S.Title>
+        <S.TitleBold>Roxio</S.TitleBold>
+      </S.Title>
+      <PhoneInput />
     </S.Container>
   );
 };

@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-const colorPrimary = '#0d1724';
+import { color, font } from '../../style-vars';
 
 export const Container = styled.View`
   flex: 1;
@@ -14,7 +14,7 @@ export const TopArea = styled.View`
   top: -10%;
   width: 100%;
   height: 50%;
-  background: ${colorPrimary};
+  background: ${color.primary};
   border-bottom-left-radius: 300;
   border-bottom-right-radius: 300;
 `;
@@ -24,7 +24,13 @@ export const CabImg = styled.Image`
 `;
 
 export const Title = styled.Text`
-  font-family: 'OpenSans_400Regular';
+  font-family: ${font.regular};
   font-size: 30px;
-  color: ${colorPrimary};
+  color: ${color.primary};
+`;
+
+export const TitleBold = styled.Text`
+  font-family: ${font.bold};
+  font-size: 30px;
+  color: ${color.primary};
 `;
