@@ -31,6 +31,8 @@ module.exports = {
     'prettier/prettier': 'error',
     'import/no-extraneous-dependencies': 'off',
     'import/prefer-default-export': 'off',
+    "react/prop-types": "off",
+    "react/jsx-props-no-spreading": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
