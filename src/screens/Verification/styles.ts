@@ -3,7 +3,16 @@ import { Dimensions, Platform } from 'react-native';
 
 import { color, font } from '../../style-vars';
 
-export const Container = styled.KeyboardAvoidingView.attrs({
+interface ITextProps {
+  bold?: boolean;
+}
+
+export const Container = styled.SafeAreaView`
+  flex: 1;
+  padding-top: 15%;
+`;
+
+export const InnerContainer = styled.KeyboardAvoidingView.attrs({
   enabled: Platform.OS === 'ios',
   behavior: 'padding',
 })`
@@ -20,21 +29,20 @@ export const IconContainer = styled.View`
   height: ${Dimensions.get('window').width / 1.9}px;
   border-radius: ${Dimensions.get('window').width / 2}px;
   background: ${color.primary};
-  margin-top: 15%;
   margin-bottom: 21px;
 `;
 
 export const Envelope = styled.Image``;
 
 export const Title = styled.Text`
-  font-family: ${({ bold }) => (bold ? font.bold : font.regular)};
+  font-family: ${({ bold }: ITextProps) => (bold ? font.bold : font.regular)};
   font-size: 30px;
   color: ${color.primary};
   margin-bottom: 17px;
 `;
 
 export const Description = styled.Text`
-  font-family: ${({ bold }) => (bold ? font.bold : font.regular)};
+  font-family: ${({ bold }: ITextProps) => (bold ? font.bold : font.regular)};
   font-size: 16px;
   text-align: center;
   color: ${color.primary};
