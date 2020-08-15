@@ -1,6 +1,7 @@
-import React, { useRef } from 'react';
+import React, { useRef, MutableRefObject } from 'react';
 import { TextInput } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import { useNavigation } from '@react-navigation/native';
 
 import CodeInput from '../../components/CodeInput';
 
@@ -8,11 +9,12 @@ import envelopeImg from '../../assets/envelope.png';
 import * as S from './styles';
 
 const Verification: React.FC = () => {
+  const navigation = useNavigation();
   const codeRef2 = useRef<TextInput>();
   const codeRef3 = useRef<TextInput>();
   const codeRef4 = useRef<TextInput>();
 
-  function focusNext(ref: React.RefObject<TextInput>) {
+  function focusNext(ref: MutableRefObject<TextInput | undefined>) {
     ref.current?.focus();
   }
 
@@ -38,7 +40,11 @@ const Verification: React.FC = () => {
           <CodeInput onChangeText={() => focusNext(codeRef2)} autoFocus />
           <CodeInput onChangeText={() => focusNext(codeRef3)} ref={codeRef2} />
           <CodeInput onChangeText={() => focusNext(codeRef4)} ref={codeRef3} />
-          <CodeInput returnKeyType="send" ref={codeRef4} />
+          <CodeInput
+            returnKeyType="send"
+            onSubmitEditing={() => navigation.navigate('Map')}
+            ref={codeRef4}
+          />
         </S.CodeContainer>
       </S.InnerContainer>
     </S.Container>
