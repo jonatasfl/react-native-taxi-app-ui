@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import MapView, { Marker } from 'react-native-maps';
+import { useNavigation } from '@react-navigation/native';
 
 import MapButton from '../../components/MapButton';
 
@@ -21,6 +22,7 @@ const Map: React.FC = () => {
     longitude: -45,
   });
 
+  const navigation = useNavigation();
   let mapRef: MapView | null = null;
 
   useEffect(() => {
@@ -73,7 +75,9 @@ const Map: React.FC = () => {
         </S.LeftOptions>
         <MapButton icon={iconCenter} noMargin onPress={centerMap} />
       </S.OptionsContainer>
-      <S.WhereToContainer>
+      <S.WhereToContainer
+        onPress={() => navigation.navigate('SelectDestination')}
+      >
         <>
           <S.From>From: Wilson Terrace 219 W</S.From>
           <S.ToContainer>
