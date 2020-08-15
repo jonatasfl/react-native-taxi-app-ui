@@ -1,32 +1,77 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import MapView, { Marker } from 'react-native-maps';
 
 import MapButton from '../../components/MapButton';
 
 import iconHome from '../../assets/home.png';
 import iconHistory from '../../assets/history.png';
 import iconCenter from '../../assets/map_center.png';
+import marker from '../../assets/marker.png';
+
 import * as S from './styles';
 
+interface ILatLng {
+  latitude: number;
+  longitude: number;
+}
+
 const Map: React.FC = () => {
+  const [latLng, setLatLng] = useState<ILatLng>({
+    latitude: -19,
+    longitude: -45,
+  });
+
+  let mapRef: MapView | null = null;
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(
+      ({ coords: { latitude, longitude } }) => {
+        setLatLng({ latitude, longitude });
+      },
+      () => {
+        console.log('Erro');
+      },
+      {
+        timeout: 2000,
+        enableHighAccuracy: true,
+        maximumAge: 1000,
+      },
+    );
+  }, []);
+
+  function centerMap() {
+    mapRef?.animateToRegion(
+      {
+        ...latLng,
+        latitudeDelta: 0.0143,
+        longitudeDelta: 0.0134,
+      },
+      1000,
+    );
+  }
+
   return (
     <S.Container>
       <S.Map
+        ref={map => {
+          mapRef = map;
+        }}
         region={{
-          latitude: -19.927987,
-          longitude: -43.945196,
+          ...latLng,
           latitudeDelta: 0.0143,
           longitudeDelta: 0.0134,
         }}
-        showsUserLocation
         loadingEnabled
         showsCompass={false}
-      />
+      >
+        <Marker coordinate={latLng} image={marker} />
+      </S.Map>
       <S.OptionsContainer>
         <S.LeftOptions>
           <MapButton icon={iconHome} />
           <MapButton icon={iconHistory} />
         </S.LeftOptions>
-        <MapButton icon={iconCenter} />
+        <MapButton icon={iconCenter} noMargin onPress={centerMap} />
       </S.OptionsContainer>
       <S.WhereToContainer>
         <>
