@@ -10,7 +10,7 @@ The layout can be found in: https://www.uistore.design/items/roxio-free-taxi-app
 
 ### Requirements
 - Nodejs 12 or higher
-- Expo App on your cellphone or IOS emulator (MacOs) or Android Emulator
+- [Expo Client App](https://expo.io/tools#client) on your cellphone or IOS emulator (MacOs) or Android Emulator
 
 ### How to install
 
@@ -31,3 +31,11 @@ Run the Metro Bundler:
     // or npm start
 
 Once the Metro Bundler is open, scan the QRCode with your Expo App on your cellphone or click to run in your device emulator.
+
+## Techs and Tools
+
+- Typescript
+- React Native (Expo)
+- Styled Components
+- Eslint
+- Prettier
