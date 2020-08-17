@@ -65,6 +65,8 @@ const Map: React.FC = () => {
         }}
         loadingEnabled
         showsCompass={false}
+        showsPointsOfInterest={false}
+        showsBuildings={false}
       >
         <Marker coordinate={latLng} image={marker} />
       </S.Map>

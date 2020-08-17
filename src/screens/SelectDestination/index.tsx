@@ -44,7 +44,25 @@ const SelectDestination: React.FC = () => {
 
   return (
     <S.Container>
-      <S.TopContainer />
+      <S.TopContainer
+        style={{
+          shadowColor: '#000',
+          shadowOffset: { width: 1, height: 1 },
+          shadowOpacity: 0.2,
+          shadowRadius: 2,
+          elevation: 5,
+        }}
+      >
+        <S.Timeline>
+          <S.Dot />
+          <S.Dash />
+          <S.Dot secondary />
+        </S.Timeline>
+        <S.FromTo>
+          <S.From>Wilson Terrace 219 W</S.From>
+          <S.To>Diana Trail 115 A</S.To>
+        </S.FromTo>
+      </S.TopContainer>
       <S.HistoryList
         data={data}
         renderItem={renderItem}
