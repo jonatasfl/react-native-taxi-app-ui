@@ -1,8 +1,13 @@
 import React, { forwardRef } from 'react';
+import { TextInput } from 'react-native';
 
 import * as S from './styles';
 
-export default forwardRef(
+interface IProps extends TextInput {
+  autoFocus?: boolean;
+}
+
+const CodeInput = forwardRef<IProps>(
   (props, ref): React.ReactElement => {
     return (
       <S.Container>
@@ -11,3 +16,5 @@ export default forwardRef(
     );
   },
 );
+
+export default CodeInput;
