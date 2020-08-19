@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
 
+import arrowLeft from '../../assets/arrow-left.png';
 import visa from '../../assets/visa.png';
 
+import MapButton from '../../components/MapButton';
 import CarButton from '../../components/CarButton';
 import Button from '../../components/Button';
 
@@ -25,6 +27,9 @@ const Request: React.FC = () => {
         showsPointsOfInterest={false}
         showsBuildings={false}
       />
+      <S.Header>
+        <MapButton icon={arrowLeft} />
+      </S.Header>
       <S.Bottom>
         <LinearGradient
           // Background Linear Gradient

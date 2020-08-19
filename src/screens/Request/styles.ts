@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import MapView from 'react-native-maps';
+import Constants from 'expo-constants';
 
 import { font, color } from '../../style-vars';
 
@@ -9,6 +10,12 @@ export const Container = styled.View`
 
 export const Map = styled(MapView)`
   flex: 1;
+`;
+
+export const Header = styled.View`
+  position: absolute;
+  top: ${Constants.statusBarHeight + 20}px;
+  padding: 0 10%;
 `;
 
 export const Bottom = styled.View`
