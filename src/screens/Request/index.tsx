@@ -33,7 +33,7 @@ const Request: React.FC = () => {
       <S.Bottom>
         <LinearGradient
           // Background Linear Gradient
-          colors={['transparent', 'rgba(255,255,255, 0.9)', '#fff']}
+          colors={['rgba(255,255,255, 0.4)', 'rgba(255,255,255, 0.9)', '#fff']}
           style={{
             position: 'absolute',
             left: 0,
