@@ -1,4 +1,5 @@
 import React, { ReactElement } from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 import Button from '../../components/Button';
 
@@ -38,6 +39,8 @@ const Item: React.FC<IItemProps> = ({ icon, text, subtext }) => {
 };
 
 const SelectDestination: React.FC = () => {
+  const navigation = useNavigation();
+
   function renderItem({ item }) {
     return <Item text={item.text} subtext={item.subtext} icon={item.icon} />;
   }
@@ -69,7 +72,7 @@ const SelectDestination: React.FC = () => {
         keyExtractor={item => String(item.id)}
       />
       <S.BottomContainer>
-        <Button>Done</Button>
+        <Button onPress={() => navigation.navigate('Request')}>Done</Button>
       </S.BottomContainer>
     </S.Container>
   );
