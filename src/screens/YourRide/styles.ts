@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import Constants from 'expo-constants';
+import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { color, font } from '../../style-vars';
 
@@ -7,18 +8,30 @@ interface IDescProps {
   value?: boolean;
 }
 
-export const Container = styled.SafeAreaView`
+export const Container = styled.ScrollView.attrs({
+  contentContainerStyle: { alignItems: 'center' },
+})`
   flex: 1;
-  align-items: center;
-  padding-top: ${Constants.statusBarHeight + 35}px;
-  padding-bottom: 10%;
+  padding-top: ${Constants.statusBarHeight + 20}px;
+  padding-bottom: 20%;
 `;
 
-export const Header = styled.View``;
+export const Header = styled.View`
+  flex-direction: row;
+  align-items: center;
+  padding: 0 10%;
+`;
+
+export const BackButton = styled.TouchableHighlight``;
+
+export const TitleContainer = styled.View`
+  flex: 1;
+  align-items: center;
+`;
 
 export const Title = styled.Text`
   font-family: ${font.regular};
-  font-size: 30px;
+  font-size: ${hp('4%')}px;
   color: ${color.primary};
 `;
 
@@ -29,12 +42,12 @@ export const InfoContainer = styled.View`
   border-bottom-width: 1px;
   border-bottom-color: ${color.gray};
   margin-top: 1%;
-  padding: 6% 0;
+  padding: 8% 0;
 `;
 
 export const Description = styled.Text`
   font-family: ${({ value }: IDescProps) => (value ? font.bold : font.regular)};
-  font-size: ${({ value }: IDescProps) => (value ? '60px' : '14px')};
+  font-size: ${({ value }: IDescProps) => (value ? `${hp('7%')}px` : '14px')};
   color: ${color.primary};
 `;
 
@@ -72,7 +85,7 @@ export const DriverName = styled.Text`
 export const RatingContainer = styled.View`
   align-items: center;
   width: 100%;
-  padding-top: 5%;
+  padding-top: 10%;
 `;
 
 export const MessageInput = styled.TextInput`
@@ -80,6 +93,6 @@ export const MessageInput = styled.TextInput`
   width: 100%;
   border-radius: 20px;
   border: 1px solid ${color.gray};
-  margin: 4% 0 2% 0;
+  margin: 8% 0 4% 0;
   padding: 13px 17px;
 `;

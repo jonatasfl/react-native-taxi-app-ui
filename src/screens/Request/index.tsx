@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useNavigation } from '@react-navigation/native';
 
 import arrowLeft from '../../assets/arrow-left.png';
 import visa from '../../assets/visa.png';
@@ -12,6 +13,8 @@ import * as S from './styles';
 
 const Request: React.FC = () => {
   const [selected, setSelected] = useState('economy');
+
+  const navigation = useNavigation();
 
   return (
     <S.Container>
@@ -28,7 +31,10 @@ const Request: React.FC = () => {
         showsBuildings={false}
       />
       <S.Header>
-        <MapButton icon={arrowLeft} />
+        <MapButton
+          icon={arrowLeft}
+          onPress={() => navigation.navigate('SelectDestination')}
+        />
       </S.Header>
       <S.Bottom>
         <LinearGradient
@@ -63,7 +69,9 @@ const Request: React.FC = () => {
           <S.CreditCardImage source={visa} />
           <S.CreditCardText>•••• 0990</S.CreditCardText>
         </S.CreditCardInfo>
-        <Button>Send Request</Button>
+        <Button onPress={() => navigation.navigate('YourRide')}>
+          Send Request
+        </Button>
       </S.Bottom>
     </S.Container>
   );
