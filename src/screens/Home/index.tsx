@@ -15,14 +15,14 @@ const Home: React.FC = () => {
     <S.Container>
       <StatusBar style="light" />
       <S.TopArea>
-        <S.CabImg source={cabImg} />
+        <S.CabImg source={cabImg} resizeMode="contain" />
       </S.TopArea>
       <S.BottomArea>
         <S.Title>
           <S.Title>Welcome to </S.Title>
           <S.TitleBold>Roxio</S.TitleBold>
         </S.Title>
-        <PhoneInput />
+        <PhoneInput placeholder="987 65 43" />
         <Button onPress={() => navigation.navigate('Verification')}>
           Get Started
         </Button>

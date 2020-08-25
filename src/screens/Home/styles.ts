@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { color, font } from '../../style-vars';
 
@@ -20,6 +21,7 @@ export const TopArea = styled.View`
 
 export const CabImg = styled.Image`
   bottom: -35%;
+  height: ${hp('50%')}px;
 `;
 
 export const BottomArea = styled.View`
@@ -27,7 +29,7 @@ export const BottomArea = styled.View`
   justify-content: flex-end;
   width: 100%;
   height: 50%;
-  padding: 10%;
+  padding: ${`${hp('10%')}px ${hp('10%')}px  ${hp('1%')}px ${hp('10%')}px`};
 `;
 
 export const Title = styled.Text`
