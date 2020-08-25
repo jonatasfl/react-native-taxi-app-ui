@@ -26,8 +26,8 @@ const Request: React.FC = () => {
     <S.Container>
       <S.Map
         region={{
-          latitude: -19.918178,
-          longitude: -43.936989,
+          latitude: -19.920183,
+          longitude: -43.936825,
           latitudeDelta: 0.0143,
           longitudeDelta: 0.0134,
         }}
