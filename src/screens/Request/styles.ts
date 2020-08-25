@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
 import MapView from 'react-native-maps';
 import Constants from 'expo-constants';
+import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { font, color } from '../../style-vars';
 
@@ -22,8 +23,7 @@ export const Bottom = styled.View`
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 40%;
-  padding: 10%;
+  padding: 10% 10% 30px 10%;
 `;
 
 export const Options = styled.View`
