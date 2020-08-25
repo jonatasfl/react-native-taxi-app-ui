@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
+import { Image, Text } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
-import { Polyline } from 'react-native-maps';
+import { Polyline, Marker, Callout } from 'react-native-maps';
 
+import homeMarker from '../../assets/home_marker.png';
+import destMarker from '../../assets/dest_marker.png';
 import arrowLeft from '../../assets/arrow-left.png';
 import visa from '../../assets/visa.png';
 
 import MapButton from '../../components/MapButton';
 import CarButton from '../../components/CarButton';
 import Button from '../../components/Button';
+import { color } from '../../style-vars';
 
 import * as S from './styles';
 
@@ -33,27 +37,35 @@ const Request: React.FC = () => {
       >
         <Polyline
           coordinates={[
-            { latitude: -43.935129, longitude: -19.916483 },
-            { latitude: -43.935322, longitude: -19.917199 },
-            { latitude: -43.935452, longitude: -19.917306 },
-            { latitude: -43.935597, longitude: -19.917413 },
-            { latitude: -43.936989, longitude: -19.918178 },
-            { latitude: -43.938683, longitude: -19.919081 },
-            { latitude: -43.937698, longitude: -19.920745 },
-            { latitude: -43.938009, longitude: -19.921849 },
-            { latitude: -43.938881, longitude: -19.921655 },
+            { longitude: -43.935129, latitude: -19.916483 },
+            { longitude: -43.935322, latitude: -19.917199 },
+            { longitude: -43.935452, latitude: -19.917306 },
+            { longitude: -43.935597, latitude: -19.917413 },
+            { longitude: -43.936989, latitude: -19.918178 },
+            { longitude: -43.938683, latitude: -19.919081 },
+            { longitude: -43.937698, latitude: -19.920745 },
+            { longitude: -43.938009, latitude: -19.921849 },
+            { longitude: -43.938881, latitude: -19.921655 },
           ]}
-          strokeColor="#000" // fallback for when `strokeColors` is not supported by the map-provider
-          strokeColors={[
-            '#7F0000',
-            '#00000000', // no color, creates a "long" gradient between the previous and next coordinate
-            '#B24112',
-            '#E5845C',
-            '#238C23',
-            '#7F0000',
-          ]}
-          strokeWidth={6}
+          strokeColor={color.secondary} // fallback for when `strokeColors` is not supported by the map-provider
+          strokeWidth={4}
         />
+        <Marker
+          image={homeMarker}
+          coordinate={{ latitude: -19.916483, longitude: -43.935129 }}
+        >
+          <Callout>
+            <Text>Praça da Estação</Text>
+          </Callout>
+        </Marker>
+        <Marker
+          image={destMarker}
+          coordinate={{ latitude: -19.921655, longitude: -43.938881 }}
+        >
+          <Callout>
+            <Text>Igreja de São José</Text>
+          </Callout>
+        </Marker>
       </S.Map>
       <S.Header>
         <MapButton
