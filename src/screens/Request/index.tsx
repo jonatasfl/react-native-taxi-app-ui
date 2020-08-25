@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Text } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
-import { Polyline, Marker, Callout, UrlTile } from 'react-native-maps';
+import { Polyline, Marker, Callout } from 'react-native-maps';
 
 import homeMarker from '../../assets/home_marker.png';
 import destMarker from '../../assets/dest_marker.png';
@@ -37,11 +37,6 @@ const Request: React.FC = () => {
         showsBuildings={false}
         customMapStyle={customMapStyle}
       >
-        {/* <UrlTile
-          urlTemplate="https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png"
-          maximumZ={19}
-          flipY={false}
-        /> */}
         <Polyline
           coordinates={[
             { longitude: -43.935129, latitude: -19.916483 },

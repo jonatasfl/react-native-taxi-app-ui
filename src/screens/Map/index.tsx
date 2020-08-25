@@ -8,6 +8,7 @@ import iconHome from '../../assets/home.png';
 import iconHistory from '../../assets/history.png';
 import iconCenter from '../../assets/map_center.png';
 import marker from '../../assets/marker.png';
+import customMapStyle from '../../mapstyle.json';
 
 import * as S from './styles';
 
@@ -67,6 +68,7 @@ const Map: React.FC = () => {
         showsCompass={false}
         showsPointsOfInterest={false}
         showsBuildings={false}
+        customMapStyle={customMapStyle}
       >
         <Marker coordinate={latLng} image={marker} />
       </S.Map>
