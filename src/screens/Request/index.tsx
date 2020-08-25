@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { Image, Text } from 'react-native';
+import { Text } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
-import { Polyline, Marker, Callout } from 'react-native-maps';
+import { Polyline, Marker, Callout, UrlTile } from 'react-native-maps';
 
 import homeMarker from '../../assets/home_marker.png';
 import destMarker from '../../assets/dest_marker.png';
 import arrowLeft from '../../assets/arrow-left.png';
 import visa from '../../assets/visa.png';
+import customMapStyle from '../../mapstyle.json';
 
 import MapButton from '../../components/MapButton';
 import CarButton from '../../components/CarButton';
@@ -25,8 +26,8 @@ const Request: React.FC = () => {
     <S.Container>
       <S.Map
         region={{
-          latitude: -19.925131,
-          longitude: -43.940618,
+          latitude: -19.918178,
+          longitude: -43.936989,
           latitudeDelta: 0.0143,
           longitudeDelta: 0.0134,
         }}
@@ -34,7 +35,13 @@ const Request: React.FC = () => {
         showsCompass={false}
         showsPointsOfInterest={false}
         showsBuildings={false}
+        customMapStyle={customMapStyle}
       >
+        {/* <UrlTile
+          urlTemplate="https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png"
+          maximumZ={19}
+          flipY={false}
+        /> */}
         <Polyline
           coordinates={[
             { longitude: -43.935129, latitude: -19.916483 },
