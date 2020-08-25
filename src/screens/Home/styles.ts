@@ -1,5 +1,8 @@
 import styled from 'styled-components/native';
-import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import {
+  heightPercentageToDP as hp,
+  widthPercentageToDP as wp,
+} from 'react-native-responsive-screen';
 
 import { color, font } from '../../style-vars';
 
@@ -29,7 +32,7 @@ export const BottomArea = styled.View`
   justify-content: flex-end;
   width: 100%;
   height: 50%;
-  padding: ${`${hp('10%')}px ${hp('10%')}px  ${hp('1%')}px ${hp('10%')}px`};
+  padding: ${`${hp('10%')}px ${wp('10%')}px  ${hp('1%')}px ${wp('10%')}px`};
 `;
 
 export const Title = styled.Text`
