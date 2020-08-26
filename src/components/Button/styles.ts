@@ -1,8 +1,9 @@
 import styled from 'styled-components/native';
+import { RectButton } from 'react-native-gesture-handler';
 
 import { color, font } from '../../style-vars';
 
-export const Container = styled.TouchableHighlight`
+export const Container = styled(RectButton)`
   align-items: center;
   justify-content: center;
   width: 100%;

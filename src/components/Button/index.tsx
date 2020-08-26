@@ -1,8 +1,9 @@
 import React from 'react';
+import { RectButtonProperties } from 'react-native-gesture-handler';
 
 import * as S from './styles';
 
-interface IProps {
+interface IProps extends RectButtonProperties {
   children: React.ReactNode;
 }
 
