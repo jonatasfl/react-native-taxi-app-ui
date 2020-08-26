@@ -42,7 +42,7 @@ const Verification: React.FC = () => {
           <CodeInput onChangeText={() => focusNext(codeRef4)} ref={codeRef3} />
           <CodeInput
             returnKeyType="send"
-            onSubmitEditing={() => navigation.navigate('Map')}
+            onSubmitEditing={() => navigation.navigate('CurrentLocation')}
             ref={codeRef4}
           />
         </S.CodeContainer>
