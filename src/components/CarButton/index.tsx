@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { RectButtonProperties } from 'react-native-gesture-handler';
 
 import economy from '../../assets/economy.png';
 import luxury from '../../assets/luxury.png';
@@ -6,7 +7,7 @@ import family from '../../assets/family.png';
 
 import * as S from './styles';
 
-interface IProps extends React.ComponentProps {
+interface IProps extends RectButtonProperties {
   text: string;
   active?: boolean;
 }

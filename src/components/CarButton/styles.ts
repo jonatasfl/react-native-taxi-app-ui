@@ -1,13 +1,18 @@
 import styled from 'styled-components/native';
+import { RectButton } from 'react-native-gesture-handler';
 
 import { color, font } from '../../style-vars';
 
-export const Container = styled.TouchableHighlight`
+interface IProps {
+  active?: boolean;
+}
+
+export const Container = styled(RectButton)`
   align-items: center;
   justify-content: center;
   width: 86px;
   height: 82px;
-  border: ${({ active }) =>
+  border: ${({ active }: IProps) =>
     active ? `2px solid ${color.secondary}` : `1px solid ${color.gray}`};
   border-radius: 20px;
   background: #fff;
