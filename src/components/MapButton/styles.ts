@@ -1,11 +1,13 @@
 import styled from 'styled-components/native';
+import { ImageProperties } from 'react-native';
+import { RectButton } from 'react-native-gesture-handler';
 
-interface IProps {
+interface IContainerProps {
   noMargin: boolean;
   transparent?: boolean;
 }
 
-export const Container = styled.TouchableHighlight`
+export const Container = styled(RectButton)`
   align-items: center;
   justify-content: center;
   width: 45px;
@@ -13,7 +15,8 @@ export const Container = styled.TouchableHighlight`
   background: ${({ transparent }) => (transparent ? 'transparent' : '#fff')};
   border-radius: 22.5px;
   /* box-shadow: 0px 5px 41px #0d1724; */
-  margin-right: ${({ noMargin }: IProps) => (noMargin ? '0px' : '10px')};
+  margin-right: ${({ noMargin }: IContainerProps) =>
+    noMargin ? '0px' : '10px'};
 `;
 
-export const Icon = styled.Image``;
+export const Icon = styled.Image<ImageProperties>``;

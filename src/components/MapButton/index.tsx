@@ -1,9 +1,11 @@
 import React from 'react';
+import { ImageURISource } from 'react-native';
+import { RectButtonProperties } from 'react-native-gesture-handler';
 
 import * as S from './styles';
 
-interface IProps {
-  icon: React.ReactNode;
+interface IProps extends RectButtonProperties {
+  icon: ImageURISource;
   noMargin?: boolean;
   transparent?: boolean;
 }
