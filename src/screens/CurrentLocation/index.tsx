@@ -80,16 +80,16 @@ const Map: React.FC = () => {
         </S.LeftOptions>
         <MapButton icon={iconCenter} noMargin onPress={centerMap} />
       </S.OptionsContainer>
-      <S.WhereToContainer
-        onPress={() => navigation.navigate('SelectDestination')}
-      >
-        <>
+      <S.WhereToContainer>
+        <S.WhereToButton
+          onPress={() => navigation.navigate('SelectDestination')}
+        >
           <S.From>From: Wilson Terrace 219 W</S.From>
           <S.ToContainer>
             <S.GreenDot />
             <S.To>Where to?</S.To>
           </S.ToContainer>
-        </>
+        </S.WhereToButton>
       </S.WhereToContainer>
     </S.Container>
   );

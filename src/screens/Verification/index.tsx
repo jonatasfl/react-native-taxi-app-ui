@@ -1,4 +1,4 @@
-import React, { useRef, MutableRefObject } from 'react';
+import React, { useRef, MutableRefObject, RefObject } from 'react';
 import { TextInput } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { useNavigation } from '@react-navigation/native';
@@ -14,7 +14,7 @@ const Verification: React.FC = () => {
   const codeRef3 = useRef<TextInput>();
   const codeRef4 = useRef<TextInput>();
 
-  function focusNext(ref: MutableRefObject<TextInput | undefined>) {
+  function focusNext(ref: RefObject<TextInput | undefined>): void {
     ref.current?.focus();
   }
 
@@ -32,9 +32,8 @@ const Verification: React.FC = () => {
         <S.Description>
           <S.Description>
             Please type the verification code sent to
-{' '}
           </S.Description>
-          <S.Description bold>+994 555 66 77</S.Description>
+          <S.Description bold> +994 555 66 77</S.Description>
         </S.Description>
         <S.CodeContainer>
           <CodeInput onChangeText={() => focusNext(codeRef2)} autoFocus />
@@ -42,7 +41,7 @@ const Verification: React.FC = () => {
           <CodeInput onChangeText={() => focusNext(codeRef4)} ref={codeRef3} />
           <CodeInput
             returnKeyType="send"
-            onSubmitEditing={() => navigation.navigate('CurrentLocation')}
+            onChangeText={() => navigation.navigate('CurrentLocation')}
             ref={codeRef4}
           />
         </S.CodeContainer>

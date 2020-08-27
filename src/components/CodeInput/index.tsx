@@ -1,20 +1,27 @@
-import React, { forwardRef } from 'react';
-import { TextInput } from 'react-native';
+import React, {
+  forwardRef,
+  RefObject,
+  RefAttributes,
+  MutableRefObject,
+  ForwardRefRenderFunction,
+  RefForwardingComponent,
+} from 'react';
+import { TextInput, TextInputProps } from 'react-native';
 
 import * as S from './styles';
 
-interface IProps extends TextInput {
-  autoFocus?: boolean;
-}
+type IProps = TextInputProps;
+type IRef = RefObject<TextInput>;
 
-const CodeInput = forwardRef<IProps>(
-  (props, ref): React.ReactElement => {
-    return (
-      <S.Container>
-        <S.Input ref={ref} {...props} />
-      </S.Container>
-    );
-  },
-);
+const CodeInput: RefForwardingComponent<TextInput, TextInputProps> = (
+  props,
+  ref,
+) => {
+  return (
+    <S.Container>
+      <S.Input ref={ref} {...props} />
+    </S.Container>
+  );
+};
 
-export default CodeInput;
+export default forwardRef(CodeInput);

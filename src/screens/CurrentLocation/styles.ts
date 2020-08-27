@@ -26,7 +26,7 @@ export const LeftOptions = styled.View`
   flex-direction: row;
 `;
 
-export const WhereToContainer = styled(RectButton)`
+export const WhereToContainer = styled.View`
   position: absolute;
   justify-content: center;
   bottom: 45px;
@@ -36,6 +36,12 @@ export const WhereToContainer = styled(RectButton)`
   background: #fff;
   border-radius: 45px;
   padding: 0 23px;
+`;
+
+export const WhereToButton = styled(RectButton)`
+  justify-content: center;
+  background: #fff;
+  border-radius: 45px;
 `;
 
 export const From = styled.Text`

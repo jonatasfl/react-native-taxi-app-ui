@@ -1,7 +1,6 @@
 import styled from 'styled-components/native';
 import MapView from 'react-native-maps';
 import Constants from 'expo-constants';
-import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { font, color } from '../../style-vars';
 

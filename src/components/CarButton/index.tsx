@@ -20,11 +20,11 @@ const carType = {
 
 const CarButton: React.FC<IProps> = ({ text, active, ...props }) => {
   return (
-    <S.Container active={active} {...props}>
-      <>
+    <S.Container active={active}>
+      <S.Button {...props}>
         <S.Image source={carType[text.toLowerCase()]} />
         <S.Title>{text}</S.Title>
-      </>
+      </S.Button>
     </S.Container>
   );
 };
