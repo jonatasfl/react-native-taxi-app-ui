@@ -19,7 +19,7 @@ const CodeInput: RefForwardingComponent<TextInput, TextInputProps> = (
 ) => {
   return (
     <S.Container>
-      <S.Input ref={ref} {...props} />
+      <S.Input ref={ref} {...props} maxLength={1} />
     </S.Container>
   );
 };

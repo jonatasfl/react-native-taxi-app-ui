@@ -1,8 +1,9 @@
 import React from 'react';
+import { TextInputProps } from 'react-native';
 
 import * as S from './styles';
 
-const PhoneInput: React.FC = props => {
+const PhoneInput: React.FC<TextInputProps> = props => {
   return (
     <S.Container>
       <S.Code>+994</S.Code>
