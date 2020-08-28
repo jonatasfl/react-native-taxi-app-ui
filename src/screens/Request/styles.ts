@@ -12,12 +12,6 @@ export const Map = styled(MapView)`
   flex: 1;
 `;
 
-export const Header = styled.View`
-  position: absolute;
-  top: ${Constants.statusBarHeight + 20}px;
-  padding: 0 10%;
-`;
-
 export const Bottom = styled.View`
   position: absolute;
   bottom: 0;

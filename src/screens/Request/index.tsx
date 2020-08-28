@@ -6,11 +6,9 @@ import { Polyline, Marker, Callout } from 'react-native-maps';
 
 import homeMarker from '../../assets/home_marker.png';
 import destMarker from '../../assets/dest_marker.png';
-import arrowLeft from '../../assets/arrow-left.png';
 import visa from '../../assets/visa.png';
 import customMapStyle from '../../mapstyle.json';
 
-import MapButton from '../../components/MapButton';
 import CarButton from '../../components/CarButton';
 import Button from '../../components/Button';
 import { color } from '../../style-vars';
@@ -69,12 +67,7 @@ const Request: React.FC = () => {
           </Callout>
         </Marker>
       </S.Map>
-      <S.Header>
-        <MapButton
-          icon={arrowLeft}
-          onPress={() => navigation.navigate('SelectDestination')}
-        />
-      </S.Header>
+
       <S.Bottom>
         <LinearGradient
           // Background Linear Gradient
