@@ -19,7 +19,7 @@ const YourRide: React.FC = () => {
 
   return (
     <S.Container>
-      <S.Header>
+      {/* <S.Header>
         <S.BackButton onPress={() => navigation.navigate('Request')}>
           <Image source={arrowLeft} />
         </S.BackButton>
@@ -27,7 +27,7 @@ const YourRide: React.FC = () => {
         <S.TitleContainer>
           <S.Title>Your Ride</S.Title>
         </S.TitleContainer>
-      </S.Header>
+      </S.Header> */}
       <S.InfoContainer>
         <S.Description>Your ride is</S.Description>
         <S.Description value>$5.58</S.Description>

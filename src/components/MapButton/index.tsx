@@ -4,13 +4,13 @@ import { RectButtonProperties } from 'react-native-gesture-handler';
 
 import * as S from './styles';
 
-interface IProps extends RectButtonProperties {
+export interface IMapButtonProps extends RectButtonProperties {
   icon: ImageURISource;
   noMargin?: boolean;
   transparent?: boolean;
 }
 
-const MapButton: React.FC<IProps> = ({
+const MapButton: React.FC<IMapButtonProps> = ({
   icon,
   noMargin = false,
   transparent,
