@@ -21,6 +21,10 @@ interface IItemProps {
   subtext?: string;
 }
 
+interface IRenderItemProps {
+  item: IItemProps;
+}
+
 const data: IData[] = [
   { id: 1, icon: homeIcon, text: 'Home', subtext: 'Spring St. 140' },
   { id: 2, icon: historyIcon, text: 'Upton St. 99' },
@@ -41,21 +45,13 @@ const Item: React.FC<IItemProps> = ({ icon, text, subtext }) => {
 const SelectDestination: React.FC = () => {
   const navigation = useNavigation();
 
-  function renderItem({ item }) {
+  function renderItem({ item }: IRenderItemProps) {
     return <Item text={item.text} subtext={item.subtext} icon={item.icon} />;
   }
 
   return (
     <S.Container>
-      <S.TopContainer
-        style={{
-          shadowColor: '#000',
-          shadowOffset: { width: 1, height: 1 },
-          shadowOpacity: 0.2,
-          shadowRadius: 2,
-          elevation: 5,
-        }}
-      >
+      <S.TopContainer>
         <S.Timeline>
           <S.Dot />
           <S.Dash />
@@ -66,10 +62,11 @@ const SelectDestination: React.FC = () => {
           <S.To>Diana Trail 115 A</S.To>
         </S.FromTo>
       </S.TopContainer>
+      <S.Shadow />
       <S.HistoryList
         data={data}
         renderItem={renderItem}
-        keyExtractor={item => String(item.id)}
+        keyExtractor={(item: IData) => String(item.id)}
       />
       <S.BottomContainer>
         <Button onPress={() => navigation.navigate('Request')}>Done</Button>

@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
 import Constants from 'expo-constants';
-import { FlatList } from 'react-native';
+import { FlatList, FlatListProps, ImageProps } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 import { color, font } from '../../style-vars';
 
@@ -23,9 +24,16 @@ export const TopContainer = styled.View`
   height: ${Constants.statusBarHeight + 125}px;
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.25);
   padding-top: ${Constants.statusBarHeight + 25}px;
-  border-bottom-width: 3px;
-  border-bottom-color: ${color.gray};
+  /* border-bottom-width: 3px;
+  border-bottom-color: ${color.gray}; */
   /* box-shadow: 10px 5px 5px red; */
+`;
+
+export const Shadow = styled(LinearGradient).attrs({
+  colors: ['rgba(0,0,0, 0.1)', 'rgba(0,0,0, 0.01)'],
+})`
+  width: 100%;
+  height: 6px;
 `;
 
 export const Timeline = styled.View`
@@ -74,7 +82,7 @@ export const To = styled.Text`
   margin: 0 10% 0 10px;
 `;
 
-export const HistoryList = styled(FlatList)`
+export const HistoryList = styled<FlatListProps>(FlatList)`
   width: 100%;
   height: 80%;
   padding: 10%;

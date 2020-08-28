@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
-import { Image } from 'react-native';
 import StarRating from 'react-native-star-rating';
-import { useNavigation } from '@react-navigation/native';
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import Button from '../../components/Button';
 
-import arrowLeft from '../../assets/arrow-left.png';
 import avatar from '../../assets/avatar.png';
 import { color } from '../../style-vars';
 
@@ -15,19 +12,8 @@ import * as S from './styles';
 const YourRide: React.FC = () => {
   const [rating, setRating] = useState(4);
 
-  const navigation = useNavigation();
-
   return (
     <S.Container>
-      {/* <S.Header>
-        <S.BackButton onPress={() => navigation.navigate('Request')}>
-          <Image source={arrowLeft} />
-        </S.BackButton>
-
-        <S.TitleContainer>
-          <S.Title>Your Ride</S.Title>
-        </S.TitleContainer>
-      </S.Header> */}
       <S.InfoContainer>
         <S.Description>Your ride is</S.Description>
         <S.Description value>$5.58</S.Description>

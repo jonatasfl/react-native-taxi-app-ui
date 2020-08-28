@@ -16,25 +16,6 @@ export const Container = styled.ScrollView.attrs({
   padding-bottom: 20%;
 `;
 
-export const Header = styled.View`
-  flex-direction: row;
-  align-items: center;
-  padding: 0 10%;
-`;
-
-export const BackButton = styled.TouchableHighlight``;
-
-export const TitleContainer = styled.View`
-  flex: 1;
-  align-items: center;
-`;
-
-export const Title = styled.Text`
-  font-family: ${font.regular};
-  font-size: ${hp('4%')}px;
-  color: ${color.primary};
-`;
-
 export const InfoContainer = styled.View`
   align-items: center;
   justify-content: center;
