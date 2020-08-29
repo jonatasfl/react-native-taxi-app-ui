@@ -23,7 +23,7 @@ export const InfoContainer = styled.View`
   border-bottom-width: 1px;
   border-bottom-color: ${color.gray};
   margin-top: 1%;
-  padding: 8% 0;
+  padding: ${`${hp('8%')}px 0 28px 0`};
 `;
 
 export const Description = styled.Text`
