@@ -17,7 +17,18 @@ const MapButton: React.FC<IMapButtonProps> = ({
   ...props
 }) => {
   return (
-    <S.Container noMargin={noMargin} transparent={transparent} {...props}>
+    <S.Container
+      noMargin={noMargin}
+      transparent={transparent}
+      {...props}
+      style={{
+        elevation: 10,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 5 },
+        shadowOpacity: 0.34,
+        shadowRadius: 6.27,
+      }}
+    >
       <S.Icon source={icon} />
     </S.Container>
   );
