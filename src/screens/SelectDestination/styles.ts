@@ -3,6 +3,7 @@ import Constants from 'expo-constants';
 import { FlatList, FlatListProps, ImageProps } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
+import { IItemProps } from './index';
 import { color, font } from '../../style-vars';
 
 interface IItemText {
@@ -79,7 +80,7 @@ export const To = styled.Text`
   margin: 0 10% 0 10px;
 `;
 
-export const HistoryList = styled<FlatListProps>(FlatList)`
+export const HistoryList = styled(FlatList as new () => FlatList<IItemProps>)`
   width: 100%;
   height: 80%;
   padding: 10%;

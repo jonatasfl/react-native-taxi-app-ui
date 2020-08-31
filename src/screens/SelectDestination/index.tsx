@@ -1,4 +1,5 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
+import { ImageURISource } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import Button from '../../components/Button';
@@ -8,15 +9,9 @@ import historyIcon from '../../assets/history.png';
 
 import * as S from './styles';
 
-interface IData {
+export interface IItemProps {
   id: number;
-  icon: ReactElement;
-  text: string;
-  subtext?: string;
-}
-
-interface IItemProps {
-  icon: ReactElement;
+  icon: ImageURISource;
   text: string;
   subtext?: string;
 }
@@ -25,28 +20,24 @@ interface IRenderItemProps {
   item: IItemProps;
 }
 
-const data: IData[] = [
+const data: IItemProps[] = [
   { id: 1, icon: homeIcon, text: 'Home', subtext: 'Spring St. 140' },
   { id: 2, icon: historyIcon, text: 'Upton St. 99' },
   { id: 3, icon: historyIcon, text: 'Sparkvill Ave 111' },
   { id: 4, icon: historyIcon, text: 'James Cameron Plasa' },
 ];
 
-const Item: React.FC<IItemProps> = ({ icon, text, subtext }) => {
-  return (
-    <S.HistoryItem>
-      <S.ItemIcon source={icon} />
-      <S.ItemText>{text}</S.ItemText>
-      {subtext && <S.ItemText small>{subtext}</S.ItemText>}
-    </S.HistoryItem>
-  );
-};
-
 const SelectDestination: React.FC = () => {
   const navigation = useNavigation();
 
   function renderItem({ item }: IRenderItemProps) {
-    return <Item text={item.text} subtext={item.subtext} icon={item.icon} />;
+    return (
+      <S.HistoryItem>
+        <S.ItemIcon source={item.icon} />
+        <S.ItemText>{item.text}</S.ItemText>
+        {item.subtext && <S.ItemText small>{item.subtext}</S.ItemText>}
+      </S.HistoryItem>
+    );
   }
 
   return (
@@ -66,7 +57,7 @@ const SelectDestination: React.FC = () => {
       <S.HistoryList
         data={data}
         renderItem={renderItem}
-        keyExtractor={(item: IData) => String(item.id)}
+        keyExtractor={item => String(item.id)}
       />
       <S.BottomContainer>
         <Button onPress={() => navigation.navigate('Request')}>Done</Button>
