@@ -24,9 +24,6 @@ export const TopContainer = styled.View`
   height: ${Constants.statusBarHeight + 125}px;
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.25);
   padding-top: ${Constants.statusBarHeight + 25}px;
-  /* border-bottom-width: 3px;
-  border-bottom-color: ${color.gray}; */
-  /* box-shadow: 10px 5px 5px red; */
 `;
 
 export const Shadow = styled(LinearGradient).attrs({

@@ -1,7 +1,8 @@
 # React Native Taxi App UI
+
 ![layout preview](https://static.dribbble.com/users/249315/screenshots/9672694/media/324e429ae37c7e4176801a246f934eaa.png)
 
-An UI only Taxi App based on a free layout that I`ve found on web.
+A Taxi App (UI only) based on a free layout that I`ve found on web.
 
 The purpose of this app is to practice React Native.
 
@@ -10,11 +11,11 @@ The layout can be found in: https://www.uistore.design/items/roxio-free-taxi-app
 ## Installation
 
 ### Requirements
+
 - Nodejs 12 or higher
 - [Expo Client App](https://expo.io/tools#client) on your cellphone or IOS emulator (MacOs) or Android Emulator
 
 ### How to install
-
 
 Clone this repo:
 
@@ -24,7 +25,6 @@ Install Dependencies:
 
     yarn
     // or npm install
-
 
 Run the Metro Bundler:
 
