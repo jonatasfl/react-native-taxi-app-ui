@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 import Constants from 'expo-constants';
-import { FlatList, FlatListProps, ImageProps } from 'react-native';
+import { FlatList } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import { IItemProps } from './index';

@@ -17,7 +17,7 @@ export interface IItemProps {
 }
 
 interface IRenderItemProps {
-  item: IItemProps;
+  item: IItemProps; // TODO: Verificar
 }
 
 const data: IItemProps[] = [
