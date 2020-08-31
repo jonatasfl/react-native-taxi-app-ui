@@ -8,8 +8,9 @@ export const Container = styled(RectButton)`
   justify-content: center;
   width: 100%;
   background: ${color.primary};
-  border-radius: 45px;
+  border-radius: 27.5px;
   height: 55px;
+  overflow: hidden;
 `;
 
 export const ButtonText = styled.Text`
