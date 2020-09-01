@@ -11,7 +11,7 @@ import customMapStyle from '../../mapstyle.json';
 
 import CarButton from '../../components/CarButton';
 import Button from '../../components/Button';
-import { color } from '../../style-vars';
+import theme from '../../theme';
 
 import * as S from './styles';
 
@@ -47,7 +47,7 @@ const Request: React.FC = () => {
             { longitude: -43.938009, latitude: -19.921849 },
             { longitude: -43.938881, latitude: -19.921655 },
           ]}
-          strokeColor={color.secondary} // fallback for when `strokeColors` is not supported by the map-provider
+          strokeColor={theme.color.secondary} // fallback for when `strokeColors` is not supported by the map-provider
           strokeWidth={4}
         />
         <Marker
