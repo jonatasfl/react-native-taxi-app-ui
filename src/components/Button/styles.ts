@@ -10,7 +10,6 @@ export const Container = styled(RectButton)`
   background: ${({ theme }: ThemeProps) => theme.color.primary};
   border-radius: 27.5px;
   height: 55px;
-  overflow: hidden;
 `;
 
 export const ButtonText = styled.Text`

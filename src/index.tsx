@@ -46,6 +46,8 @@ const Index: React.FC = () => {
             headerStyle: {},
           }}
         >
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Verification" component={Verification} />
           <Stack.Screen
             name="AddCard"
             component={AddCard}
@@ -55,8 +57,6 @@ const Index: React.FC = () => {
               headerLeft: props => <BackButton transparent {...props} />,
             }}
           />
-          <Stack.Screen name="Home" component={Home} />
-          <Stack.Screen name="Verification" component={Verification} />
           <Stack.Screen name="CurrentLocation" component={CurrentLocation} />
           <Stack.Screen
             name="SelectDestination"

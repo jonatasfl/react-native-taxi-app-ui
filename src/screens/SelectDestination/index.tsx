@@ -21,10 +21,10 @@ interface IRenderItemProps {
 }
 
 const data: IItemProps[] = [
-  { id: 1, icon: homeIcon, text: 'Home', subtext: 'Spring St. 140' },
-  { id: 2, icon: historyIcon, text: 'Upton St. 99' },
-  { id: 3, icon: historyIcon, text: 'Sparkvill Ave 111' },
-  { id: 4, icon: historyIcon, text: 'James Cameron Plasa' },
+  { id: 1, icon: homeIcon, text: 'Casa', subtext: 'Spring St. 140' },
+  { id: 2, icon: historyIcon, text: 'Minas Shopping' },
+  { id: 3, icon: historyIcon, text: 'Estação Santa Inês' },
+  { id: 4, icon: historyIcon, text: 'Cidade Administrativa' },
 ];
 
 const SelectDestination: React.FC = () => {
@@ -49,8 +49,8 @@ const SelectDestination: React.FC = () => {
           <S.Dot secondary />
         </S.Timeline>
         <S.FromTo>
-          <S.From>Wilson Terrace 219 W</S.From>
-          <S.To>Diana Trail 115 A</S.To>
+          <S.From>Praça da Estação</S.From>
+          <S.To>Igreja São José</S.To>
         </S.FromTo>
       </S.TopContainer>
       <S.Shadow />

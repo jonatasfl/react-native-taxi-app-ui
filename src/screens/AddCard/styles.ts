@@ -3,6 +3,10 @@ import Constants from 'expo-constants';
 
 import { ThemeProps } from '../../theme';
 
+interface InputProps extends ThemeProps {
+  focused?: boolean;
+}
+
 export const Container = styled.KeyboardAvoidingView`
   flex: 1;
   padding: ${Constants.statusBarHeight + 100}px 10% 5% 10%;
@@ -26,54 +30,56 @@ export const CardTop = styled.View`
 
 export const CardBottom = styled.View``;
 
-export const CardText = styled.Text`
-  font-family: ${({ theme }: ThemeProps) => theme.font.bold};
+export const CardText = styled.Text<ThemeProps>`
+  font-family: ${({ theme }) => theme.font.bold};
   font-size: 18px;
-  color: ${({ theme }: ThemeProps) => theme.color.white};
+  color: ${({ theme }) => theme.color.white};
   margin-bottom: 10px;
 `;
 
 export const CardImage = styled.Image``;
 
-export const Label = styled.Text`
-  font-family: ${({ theme }: ThemeProps) => theme.font.regular};
+export const Label = styled.Text<ThemeProps>`
+  font-family: ${({ theme }) => theme.font.regular};
   font-size: 14px;
-  color: ${({ theme }: ThemeProps) => theme.color.primary};
+  color: ${({ theme }) => theme.color.primary};
 `;
 
-export const Input = styled.TextInput`
-  font-family: ${({ theme }: ThemeProps) => theme.font.bold};
+export const Input = styled.TextInput<InputProps>`
+  font-family: ${({ theme }) => theme.font.bold};
   font-size: 18px;
-  color: ${({ theme }: ThemeProps) => theme.color.primary};
+  color: ${({ theme }) => theme.color.primary};
   padding: 8px 0;
   border-bottom-width: 1px;
-  border-bottom-color: ${({ theme }: ThemeProps) => theme.color.gray};
+  border-bottom-color: ${({ theme, focused }) =>
+    focused ? theme.color.secondary : theme.color.gray};
   margin-bottom: 20px;
 `;
 
-export const CardInputWrapper = styled.View`
+export const CardInputWrapper = styled.View<InputProps>`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   color: ${({ theme }: ThemeProps) => theme.color.primary};
   border-bottom-width: 1px;
-  border-bottom-color: ${({ theme }: ThemeProps) => theme.color.gray};
+  border-bottom-color: ${({ theme, focused }) =>
+    focused ? theme.color.secondary : theme.color.gray};
   margin-bottom: 20px;
 `;
 
-export const CardInput = styled.TextInput`
+export const CardInput = styled.TextInput<InputProps>`
   flex: 1;
-  font-family: ${({ theme }: ThemeProps) => theme.font.bold};
+  font-family: ${({ theme }) => theme.font.bold};
   font-size: 18px;
-  color: ${({ theme }: ThemeProps) => theme.color.primary};
+  color: ${({ theme }) => theme.color.primary};
   padding: 8px 0;
 `;
 
 export const CardCamera = styled.Image``;
 
 export const ExpCvvWrapper = styled.View`
-  flex: 1;
   flex-direction: row;
+  margin-bottom: 20px;
 `;
 
 export const ExpWrapper = styled.View`
