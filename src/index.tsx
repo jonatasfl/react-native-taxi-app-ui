@@ -11,6 +11,7 @@ import theme from './theme';
 
 import Home from './screens/Home';
 import Verification from './screens/Verification';
+import AddCard from './screens/AddCard';
 import CurrentLocation from './screens/CurrentLocation';
 import SelectDestination from './screens/SelectDestination';
 import Request from './screens/Request';
@@ -45,6 +46,15 @@ const Index: React.FC = () => {
             headerStyle: {},
           }}
         >
+          <Stack.Screen
+            name="AddCard"
+            component={AddCard}
+            options={{
+              headerShown: true,
+              headerTitle: 'Add Card',
+              headerLeft: props => <BackButton transparent {...props} />,
+            }}
+          />
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Verification" component={Verification} />
           <Stack.Screen name="CurrentLocation" component={CurrentLocation} />
