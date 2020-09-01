@@ -1,15 +1,17 @@
 import styled from 'styled-components/native';
 import { RectButton } from 'react-native-gesture-handler';
 
-import { color, font } from '../../style-vars';
+import { ThemeProps } from '../../theme';
 
-interface IProps {
+interface IProps extends ThemeProps {
   active?: boolean;
 }
 
 export const Container = styled.View`
-  border: ${({ active }: IProps) =>
-    active ? `2px solid ${color.secondary}` : `1px solid ${color.gray}`};
+  border: ${({ active, theme }: IProps) =>
+    active
+      ? `2px solid ${theme.color.secondary}`
+      : `1px solid ${theme.color.gray}`};
   border-radius: 20px;
 `;
 
@@ -27,7 +29,7 @@ export const Image = styled.Image`
 `;
 
 export const Title = styled.Text`
-  font-family: ${font.regular};
+  font-family: ${({ theme }: ThemeProps) => theme.font.regular};
   font-size: 12px;
-  color: ${color.primary};
+  color: ${({ theme }: ThemeProps) => theme.color.primary};
 `;
