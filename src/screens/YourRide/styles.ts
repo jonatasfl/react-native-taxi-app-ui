@@ -8,10 +8,13 @@ interface IDescProps extends ThemeProps {
   value?: boolean;
 }
 
-export const Container = styled.ScrollView.attrs({
+export const Container = styled.KeyboardAvoidingView`
+  flex: 1;
+`;
+
+export const InnerContainer = styled.ScrollView.attrs({
   contentContainerStyle: { alignItems: 'center' },
 })`
-  flex: 1;
   padding-top: ${Constants.statusBarHeight + 20}px;
   padding-bottom: 20%;
 `;
