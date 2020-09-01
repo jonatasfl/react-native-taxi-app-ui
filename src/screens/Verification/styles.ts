@@ -1,9 +1,9 @@
 import styled from 'styled-components/native';
 import { Dimensions, Platform } from 'react-native';
 
-import { color, font } from '../../style-vars';
+import { ThemeProps } from '../../theme';
 
-interface ITextProps {
+interface ITextProps extends ThemeProps {
   bold?: boolean;
 }
 
@@ -28,24 +28,26 @@ export const IconContainer = styled.View`
   width: ${Dimensions.get('window').width / 1.9}px;
   height: ${Dimensions.get('window').width / 1.9}px;
   border-radius: ${Dimensions.get('window').width / 2}px;
-  background: ${color.primary};
+  background: ${({ theme }: ThemeProps) => theme.color.primary};
   margin-bottom: 21px;
 `;
 
 export const Envelope = styled.Image``;
 
 export const Title = styled.Text`
-  font-family: ${({ bold }: ITextProps) => (bold ? font.bold : font.regular)};
+  font-family: ${({ bold, theme }: ITextProps) =>
+    bold ? theme.font.bold : theme.font.regular};
   font-size: 30px;
-  color: ${color.primary};
+  color: ${({ theme }: ThemeProps) => theme.color.primary};
   margin-bottom: 17px;
 `;
 
 export const Description = styled.Text`
-  font-family: ${({ bold }: ITextProps) => (bold ? font.bold : font.regular)};
+  font-family: ${({ bold, theme }: ITextProps) =>
+    bold ? theme.font.bold : theme.font.regular};
   font-size: 16px;
   text-align: center;
-  color: ${color.primary};
+  color: ${({ theme }: ThemeProps) => theme.color.primary};
   margin-bottom: 35px;
 `;
 

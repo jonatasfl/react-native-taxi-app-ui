@@ -5,7 +5,7 @@ import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import Button from '../../components/Button';
 
 import avatar from '../../assets/avatar.png';
-import { color } from '../../style-vars';
+import theme from '../../theme';
 
 import * as S from './styles';
 
@@ -31,9 +31,9 @@ const YourRide: React.FC = () => {
             maxStars={5}
             rating={rating}
             selectedStar={setRating}
-            fullStarColor={color.secondary}
+            fullStarColor={theme.color.secondary}
             emptyStar="star"
-            emptyStarColor={color.gray}
+            emptyStarColor={theme.color.gray}
             starSize={hp('4%')}
             containerStyle={{ width: '50%', paddingTop: 8 }}
           />

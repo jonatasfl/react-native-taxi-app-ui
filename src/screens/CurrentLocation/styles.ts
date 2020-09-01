@@ -1,7 +1,8 @@
 import styled from 'styled-components/native';
 import MapView from 'react-native-maps';
 import { RectButton } from 'react-native-gesture-handler';
-import { color, font } from '../../style-vars';
+
+import { ThemeProps } from '../../theme';
 
 export const Container = styled.View`
   flex: 1;
@@ -32,7 +33,7 @@ export const WhereToContainer = styled.View`
   bottom: 45px;
   width: 80%;
   height: 55px;
-  border: 1px solid ${color.gray};
+  border: 1px solid ${({ theme }: ThemeProps) => theme.color.gray};
   background: #fff;
   border-radius: 45px;
   padding: 0 23px;
@@ -45,9 +46,9 @@ export const WhereToButton = styled(RectButton)`
 `;
 
 export const From = styled.Text`
-  font-family: ${font.regular};
+  font-family: ${({ theme }: ThemeProps) => theme.font.regular};
   font-size: 10px;
-  color: ${color.primary};
+  color: ${({ theme }: ThemeProps) => theme.color.primary};
 `;
 
 export const ToContainer = styled.View`
@@ -59,12 +60,12 @@ export const GreenDot = styled.View`
   width: 8px;
   height: 8px;
   border-radius: 4px;
-  background: ${color.secondary};
+  background: ${({ theme }: ThemeProps) => theme.color.secondary};
   margin-right: 10px;
 `;
 
 export const To = styled.Text`
-  font-family: ${font.regular};
+  font-family: ${({ theme }: ThemeProps) => theme.font.regular};
   font-size: 18px;
-  color: ${color.primary};
+  color: ${({ theme }: ThemeProps) => theme.color.primary};
 `;

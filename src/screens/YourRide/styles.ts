@@ -2,9 +2,9 @@ import styled from 'styled-components/native';
 import Constants from 'expo-constants';
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
-import { color, font } from '../../style-vars';
+import { ThemeProps } from '../../theme';
 
-interface IDescProps {
+interface IDescProps extends ThemeProps {
   value?: boolean;
 }
 
@@ -21,15 +21,16 @@ export const InfoContainer = styled.View`
   justify-content: center;
   width: 100%;
   border-bottom-width: 1px;
-  border-bottom-color: ${color.gray};
+  border-bottom-color: ${({ theme }: ThemeProps) => theme.color.gray};
   margin-top: 1%;
   padding: ${`${hp('8%')}px 0 28px 0`};
 `;
 
 export const Description = styled.Text`
-  font-family: ${({ value }: IDescProps) => (value ? font.bold : font.regular)};
+  font-family: ${({ value, theme }: IDescProps) =>
+    value ? theme.font.bold : theme.font.regular};
   font-size: ${({ value }: IDescProps) => (value ? `${hp('7%')}px` : '14px')};
-  color: ${color.primary};
+  color: ${({ theme }: ThemeProps) => theme.color.primary};
 `;
 
 export const DriverContainer = styled.View`
@@ -45,7 +46,7 @@ export const AvatarContainer = styled.View`
   justify-content: center;
   width: 114px;
   height: 114px;
-  border: 1px solid ${color.gray};
+  border: 1px solid ${({ theme }: ThemeProps) => theme.color.gray};
   border-radius: 57px;
   margin-bottom: 8px;
 `;
@@ -57,9 +58,9 @@ export const Avatar = styled.Image`
 `;
 
 export const DriverName = styled.Text`
-  font-family: ${font.bold};
+  font-family: ${({ theme }: ThemeProps) => theme.font.bold};
   font-size: 18px;
-  color: ${color.primary};
+  color: ${({ theme }: ThemeProps) => theme.color.primary};
   margin-bottom: 16px;
 `;
 
@@ -73,7 +74,7 @@ export const MessageInput = styled.TextInput`
   justify-content: flex-start;
   width: 100%;
   border-radius: 20px;
-  border: 1px solid ${color.gray};
+  border: 1px solid ${({ theme }: ThemeProps) => theme.color.gray};
   margin: 8% 0 4% 0;
   padding: 13px 17px;
 `;

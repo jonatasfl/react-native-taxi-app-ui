@@ -4,12 +4,12 @@ import { FlatList } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import { IItemProps } from './index';
-import { color, font } from '../../style-vars';
+import { ThemeProps } from '../../theme';
 
-interface IItemText {
+interface IItemText extends ThemeProps {
   small?: boolean;
 }
-interface IDot {
+interface IDot extends ThemeProps {
   secondary?: boolean;
 }
 
@@ -46,8 +46,8 @@ export const Dot = styled.View`
   width: 12px;
   height: 12px;
   border-radius: 6px;
-  background: ${({ secondary }: IDot) =>
-    secondary ? color.secondary : '#000'};
+  background: ${({ secondary, theme }: IDot) =>
+    secondary ? theme.color.secondary : '#000'};
 `;
 
 export const Dash = styled.View`
@@ -63,19 +63,19 @@ export const FromTo = styled.View`
 `;
 
 export const From = styled.Text`
-  font-family: ${font.regular};
+  font-family: ${({ theme }: ThemeProps) => theme.font.regular};
   font-size: 18px;
-  color: ${color.gray};
+  color: ${({ theme }: ThemeProps) => theme.color.gray};
   padding: 12px;
   border-bottom-width: 1px;
-  border-bottom-color: ${color.gray};
+  border-bottom-color: ${({ theme }: ThemeProps) => theme.color.gray};
   margin: 0 10% 0 10px;
 `;
 
 export const To = styled.Text`
-  font-family: ${font.regular};
+  font-family: ${({ theme }: ThemeProps) => theme.font.regular};
   font-size: 18px;
-  color: ${color.primary};
+  color: ${({ theme }: ThemeProps) => theme.color.primary};
   padding: 12px;
   margin: 0 10% 0 10px;
 `;
@@ -92,7 +92,7 @@ export const HistoryItem = styled.View`
   width: 100%;
   height: 60px;
   border-bottom-width: 1px;
-  border-bottom-color: ${color.gray};
+  border-bottom-color: ${({ theme }: ThemeProps) => theme.color.gray};
 `;
 
 export const ItemIcon = styled.Image`
@@ -100,10 +100,10 @@ export const ItemIcon = styled.Image`
 `;
 
 export const ItemText = styled.Text`
-  font-family: ${font.regular};
+  font-family: ${({ theme }: ThemeProps) => theme.font.regular};
   font-size: ${({ small }: IItemText) => (small ? '10px' : '18px')};
   margin-left: ${({ small }: IItemText) => (small ? '14px' : '0px')};
-  color: ${color.primary};
+  color: ${({ theme }: ThemeProps) => theme.color.primary};
 `;
 
 export const BottomContainer = styled.View`

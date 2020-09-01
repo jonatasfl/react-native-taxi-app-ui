@@ -1,8 +1,7 @@
 import styled from 'styled-components/native';
 import MapView from 'react-native-maps';
-import Constants from 'expo-constants';
 
-import { font, color } from '../../style-vars';
+import { ThemeProps } from '../../theme';
 
 export const Container = styled.View`
   flex: 1;
@@ -38,7 +37,7 @@ export const CreditCardImage = styled.Image`
 
 export const CreditCardText = styled.Text`
   align-items: center;
-  font-family: ${font.regular};
+  font-family: ${({ theme }: ThemeProps) => theme.font.regular};
   font-size: 18px;
-  color: ${color.primary};
+  color: ${({ theme }: ThemeProps) => theme.color.primary};
 `;

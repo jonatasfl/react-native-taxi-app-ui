@@ -4,7 +4,7 @@ import {
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
 
-import { color, font } from '../../style-vars';
+import { ThemeProps } from '../../theme';
 
 export const Container = styled.View`
   flex: 1;
@@ -17,7 +17,7 @@ export const TopArea = styled.View`
   top: -10%;
   width: 100%;
   height: 50%;
-  background: ${color.primary};
+  background: ${({ theme }: ThemeProps) => theme.color.primary};
   border-bottom-left-radius: 300px;
   border-bottom-right-radius: 300px;
 `;
@@ -36,14 +36,14 @@ export const BottomArea = styled.View`
 `;
 
 export const Title = styled.Text`
-  font-family: ${font.regular};
+  font-family: ${({ theme }: ThemeProps) => theme.font.regular};
   font-size: 30px;
-  color: ${color.primary};
+  color: ${({ theme }: ThemeProps) => theme.color.primary};
   margin-bottom: 42px;
 `;
 
 export const TitleBold = styled.Text`
-  font-family: ${font.bold};
+  font-family: ${({ theme }: ThemeProps) => theme.font.bold};
   font-size: 30px;
-  color: ${color.primary};
+  color: ${({ theme }: ThemeProps) => theme.color.primary};
 `;
