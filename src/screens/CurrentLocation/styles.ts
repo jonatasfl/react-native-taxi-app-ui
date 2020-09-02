@@ -27,13 +27,13 @@ export const LeftOptions = styled.View`
   flex-direction: row;
 `;
 
-export const WhereToContainer = styled.View`
+export const WhereToContainer = styled.View<ThemeProps>`
   position: absolute;
   justify-content: center;
   bottom: 45px;
   width: 80%;
   height: 55px;
-  border: 1px solid ${({ theme }: ThemeProps) => theme.color.gray};
+  border: 1px solid ${({ theme }) => theme.color.gray};
   background: #fff;
   border-radius: 45px;
   padding: 0 23px;
@@ -45,10 +45,10 @@ export const WhereToButton = styled(RectButton)`
   border-radius: 45px;
 `;
 
-export const From = styled.Text`
-  font-family: ${({ theme }: ThemeProps) => theme.font.regular};
+export const From = styled.Text<ThemeProps>`
+  font-family: ${({ theme }) => theme.font.regular};
   font-size: 10px;
-  color: ${({ theme }: ThemeProps) => theme.color.primary};
+  color: ${({ theme }) => theme.color.primary};
 `;
 
 export const ToContainer = styled.View`
@@ -56,16 +56,16 @@ export const ToContainer = styled.View`
   align-items: center;
 `;
 
-export const GreenDot = styled.View`
+export const GreenDot = styled.View<ThemeProps>`
   width: 8px;
   height: 8px;
   border-radius: 4px;
-  background: ${({ theme }: ThemeProps) => theme.color.secondary};
+  background: ${({ theme }) => theme.color.secondary};
   margin-right: 10px;
 `;
 
-export const To = styled.Text`
-  font-family: ${({ theme }: ThemeProps) => theme.font.regular};
+export const To = styled.Text<ThemeProps>`
+  font-family: ${({ theme }) => theme.font.regular};
   font-size: 18px;
-  color: ${({ theme }: ThemeProps) => theme.color.primary};
+  color: ${({ theme }) => theme.color.primary};
 `;

@@ -12,12 +12,12 @@ export const Container = styled.View`
   padding-bottom: 60px;
 `;
 
-export const TopArea = styled.View`
+export const TopArea = styled.View<ThemeProps>`
   align-items: center;
   top: -10%;
   width: 100%;
   height: 50%;
-  background: ${({ theme }: ThemeProps) => theme.color.primary};
+  background: ${({ theme }) => theme.color.primary};
   border-bottom-left-radius: 300px;
   border-bottom-right-radius: 300px;
 `;
@@ -35,15 +35,15 @@ export const BottomArea = styled.View`
   padding: ${`${hp('10%')}px ${wp('10%')}px  ${hp('1%')}px ${wp('10%')}px`};
 `;
 
-export const Title = styled.Text`
-  font-family: ${({ theme }: ThemeProps) => theme.font.regular};
+export const Title = styled.Text<ThemeProps>`
+  font-family: ${({ theme }) => theme.font.regular};
   font-size: 30px;
-  color: ${({ theme }: ThemeProps) => theme.color.primary};
+  color: ${({ theme }) => theme.color.primary};
   margin-bottom: 42px;
 `;
 
-export const TitleBold = styled.Text`
-  font-family: ${({ theme }: ThemeProps) => theme.font.bold};
+export const TitleBold = styled.Text<ThemeProps>`
+  font-family: ${({ theme }) => theme.font.bold};
   font-size: 30px;
-  color: ${({ theme }: ThemeProps) => theme.color.primary};
+  color: ${({ theme }) => theme.color.primary};
 `;

@@ -7,8 +7,8 @@ interface IProps extends ThemeProps {
   active?: boolean;
 }
 
-export const Container = styled.View`
-  border: ${({ active, theme }: IProps) =>
+export const Container = styled.View<IProps>`
+  border: ${({ active, theme }) =>
     active
       ? `2px solid ${theme.color.secondary}`
       : `1px solid ${theme.color.gray}`};
@@ -28,8 +28,8 @@ export const Image = styled.Image`
   margin-bottom: 6px;
 `;
 
-export const Title = styled.Text`
-  font-family: ${({ theme }: ThemeProps) => theme.font.regular};
+export const Title = styled.Text<ThemeProps>`
+  font-family: ${({ theme }) => theme.font.regular};
   font-size: 12px;
-  color: ${({ theme }: ThemeProps) => theme.color.primary};
+  color: ${({ theme }) => theme.color.primary};
 `;

@@ -2,12 +2,12 @@ import styled from 'styled-components/native';
 
 import { ThemeProps } from '../../theme';
 
-export const Container = styled.View`
+export const Container = styled.View<ThemeProps>`
   align-items: center;
   justify-content: center;
   width: 55px;
   height: 55px;
-  border: 1px solid ${({ theme }: ThemeProps) => theme.color.gray};
+  border: 1px solid ${({ theme }) => theme.color.gray};
   border-radius: ${55 / 2}px;
 `;
 

@@ -12,8 +12,8 @@ export const Container = styled(RectButton)`
   height: 55px;
 `;
 
-export const ButtonText = styled.Text`
-  font-family: ${({ theme }: ThemeProps) => theme.font.bold};
+export const ButtonText = styled.Text<ThemeProps>`
+  font-family: ${({ theme }) => theme.font.bold};
   font-size: 18px;
-  color: ${({ theme }: ThemeProps) => theme.color.white};
+  color: ${({ theme }) => theme.color.white};
 `;

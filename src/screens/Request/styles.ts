@@ -35,9 +35,9 @@ export const CreditCardImage = styled.Image`
   margin-right: 5px;
 `;
 
-export const CreditCardText = styled.Text`
+export const CreditCardText = styled.Text<ThemeProps>`
   align-items: center;
-  font-family: ${({ theme }: ThemeProps) => theme.font.regular};
+  font-family: ${({ theme }) => theme.font.regular};
   font-size: 18px;
-  color: ${({ theme }: ThemeProps) => theme.color.primary};
+  color: ${({ theme }) => theme.color.primary};
 `;

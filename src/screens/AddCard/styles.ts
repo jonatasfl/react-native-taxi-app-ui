@@ -60,7 +60,7 @@ export const CardInputWrapper = styled.View<InputProps>`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  color: ${({ theme }: ThemeProps) => theme.color.primary};
+  color: ${({ theme }) => theme.color.primary};
   border-bottom-width: 1px;
   border-bottom-color: ${({ theme, focused }) =>
     focused ? theme.color.secondary : theme.color.gray};

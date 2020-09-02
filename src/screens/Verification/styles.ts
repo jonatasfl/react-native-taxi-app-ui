@@ -22,32 +22,32 @@ export const InnerContainer = styled.KeyboardAvoidingView.attrs({
   padding-right: 15%;
 `;
 
-export const IconContainer = styled.View`
+export const IconContainer = styled.View<ThemeProps>`
   align-items: center;
   justify-content: center;
   width: ${Dimensions.get('window').width / 1.9}px;
   height: ${Dimensions.get('window').width / 1.9}px;
   border-radius: ${Dimensions.get('window').width / 2}px;
-  background: ${({ theme }: ThemeProps) => theme.color.primary};
+  background: ${({ theme }) => theme.color.primary};
   margin-bottom: 21px;
 `;
 
 export const Envelope = styled.Image``;
 
-export const Title = styled.Text`
-  font-family: ${({ bold, theme }: ITextProps) =>
+export const Title = styled.Text<ITextProps>`
+  font-family: ${({ bold, theme }) =>
     bold ? theme.font.bold : theme.font.regular};
   font-size: 30px;
-  color: ${({ theme }: ThemeProps) => theme.color.primary};
+  color: ${({ theme }) => theme.color.primary};
   margin-bottom: 17px;
 `;
 
-export const Description = styled.Text`
-  font-family: ${({ bold, theme }: ITextProps) =>
+export const Description = styled.Text<ITextProps>`
+  font-family: ${({ bold, theme }) =>
     bold ? theme.font.bold : theme.font.regular};
   font-size: 16px;
   text-align: center;
-  color: ${({ theme }: ThemeProps) => theme.color.primary};
+  color: ${({ theme }) => theme.color.primary};
   margin-bottom: 35px;
 `;
 

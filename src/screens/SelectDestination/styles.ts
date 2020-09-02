@@ -42,11 +42,11 @@ export const Timeline = styled.View`
   margin-left: 10%;
 `;
 
-export const Dot = styled.View`
+export const Dot = styled.View<IDot>`
   width: 12px;
   height: 12px;
   border-radius: 6px;
-  background: ${({ secondary, theme }: IDot) =>
+  background: ${({ secondary, theme }) =>
     secondary ? theme.color.secondary : '#000'};
 `;
 
@@ -62,20 +62,20 @@ export const FromTo = styled.View`
   padding-right: 15%;
 `;
 
-export const From = styled.Text`
-  font-family: ${({ theme }: ThemeProps) => theme.font.regular};
+export const From = styled.Text<ThemeProps>`
+  font-family: ${({ theme }) => theme.font.regular};
   font-size: 18px;
-  color: ${({ theme }: ThemeProps) => theme.color.gray};
+  color: ${({ theme }) => theme.color.gray};
   padding: 12px;
   border-bottom-width: 1px;
-  border-bottom-color: ${({ theme }: ThemeProps) => theme.color.gray};
+  border-bottom-color: ${({ theme }) => theme.color.gray};
   margin: 0 10% 0 10px;
 `;
 
-export const To = styled.Text`
-  font-family: ${({ theme }: ThemeProps) => theme.font.regular};
+export const To = styled.Text<ThemeProps>`
+  font-family: ${({ theme }) => theme.font.regular};
   font-size: 18px;
-  color: ${({ theme }: ThemeProps) => theme.color.primary};
+  color: ${({ theme }) => theme.color.primary};
   padding: 12px;
   margin: 0 10% 0 10px;
 `;
@@ -86,24 +86,24 @@ export const HistoryList = styled(FlatList as new () => FlatList<IItemProps>)`
   padding: 10%;
 `;
 
-export const HistoryItem = styled.View`
+export const HistoryItem = styled.View<ThemeProps>`
   flex-direction: row;
   align-items: center;
   width: 100%;
   height: 60px;
   border-bottom-width: 1px;
-  border-bottom-color: ${({ theme }: ThemeProps) => theme.color.gray};
+  border-bottom-color: ${({ theme }) => theme.color.gray};
 `;
 
 export const ItemIcon = styled.Image`
   margin-right: 14px;
 `;
 
-export const ItemText = styled.Text`
-  font-family: ${({ theme }: ThemeProps) => theme.font.regular};
-  font-size: ${({ small }: IItemText) => (small ? '10px' : '18px')};
-  margin-left: ${({ small }: IItemText) => (small ? '14px' : '0px')};
-  color: ${({ theme }: ThemeProps) => theme.color.primary};
+export const ItemText = styled.Text<IItemText>`
+  font-family: ${({ theme }) => theme.font.regular};
+  font-size: ${({ small }) => (small ? '10px' : '18px')};
+  margin-left: ${({ small }) => (small ? '14px' : '0px')};
+  color: ${({ theme }) => theme.color.primary};
 `;
 
 export const BottomContainer = styled.View`
