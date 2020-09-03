@@ -17,35 +17,13 @@ import SelectDestination from './screens/SelectDestination';
 import Request from './screens/Request';
 import YourRide from './screens/YourRide';
 
-import MapButton, { IMapButtonProps } from './components/MapButton';
-import arrowLeft from './assets/arrow-left.png';
-
-type IBackButton = Partial<IMapButtonProps>;
-
-const BackButton: React.FC<IBackButton> = props => {
-  return <MapButton {...props} icon={arrowLeft} />;
-};
-
 const Stack = createStackNavigator();
 
 const Index: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <NavigationContainer>
-        <Stack.Navigator
-          screenOptions={{
-            headerShown: false,
-            headerTransparent: true,
-            headerBackTitleVisible: false,
-            headerLeftContainerStyle: { paddingLeft: wp('5%') },
-            headerTitleAlign: 'center',
-            headerTitleStyle: {
-              fontFamily: 'OpenSans_400Regular',
-              fontSize: hp('4%'),
-            },
-            headerStyle: {},
-          }}
-        >
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Verification" component={Verification} />
           <Stack.Screen name="AddCard" component={AddCard} />
@@ -54,15 +32,7 @@ const Index: React.FC = () => {
             name="SelectDestination"
             component={SelectDestination}
           />
-          <Stack.Screen
-            name="Request"
-            component={Request}
-            options={{
-              headerShown: true,
-              headerTitle: '',
-              headerLeft: props => <BackButton {...props} />,
-            }}
-          />
+          <Stack.Screen name="Request" component={Request} />
           <Stack.Screen name="YourRide" component={YourRide} />
         </Stack.Navigator>
       </NavigationContainer>

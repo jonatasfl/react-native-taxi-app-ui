@@ -23,6 +23,9 @@ const Request: React.FC = () => {
 
   return (
     <S.Container>
+      <S.HeaderContainer>
+        <Header transparentButton={false} />
+      </S.HeaderContainer>
       <S.Map
         region={{
           latitude: -19.920183,

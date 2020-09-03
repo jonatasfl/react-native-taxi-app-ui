@@ -7,6 +7,11 @@ export const Container = styled.View`
   flex: 1;
 `;
 
+export const HeaderContainer = styled.View`
+  position: absolute;
+  z-index: 999;
+`;
+
 export const Map = styled(MapView)`
   flex: 1;
 `;
