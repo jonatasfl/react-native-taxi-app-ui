@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import Constants from 'expo-constants';
 
 import { ThemeProps } from '../../theme';
 
@@ -9,6 +8,10 @@ interface InputProps extends ThemeProps {
 
 export const Container = styled.KeyboardAvoidingView`
   flex: 1;
+`;
+
+export const Inner = styled.View`
+  justify-content: flex-end;
   padding: 40px 10% 5% 10%;
 `;
 

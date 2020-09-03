@@ -12,17 +12,33 @@ import * as S from './styles';
 
 const AddCard: React.FC = () => {
   const [focused, setFocused] = useState('');
-  const [name, setName] = useState('Jonatas Lizandro');
-  const [number, setNumber] = useState('1234 5678 908');
-  const [exp, setExp] = useState('12 / 2022');
-  const [cvv, setCvv] = useState('010');
+  const [name, setName] = useState('');
+  const [number, setNumber] = useState('');
+  const [exp, setExp] = useState('');
+  const [cvv, setCvv] = useState('');
 
   const { navigate } = useNavigation();
 
+  function changeNumber(value: string) {
+    if ([4, 9, 14].indexOf(value.length) !== -1) {
+      setNumber(`${value} `);
+    } else {
+      setNumber(value);
+    }
+  }
+
+  function changeExp(value: string) {
+    if (value.length === 2) {
+      setExp(`${value} / `);
+    } else {
+      setExp(value);
+    }
+  }
+
   return (
-    <>
+    <S.Container>
       <Header title="Add Card" boldPosition={1} />
-      <S.Container>
+      <S.Inner>
         <S.Card>
           <S.CardTop>
             <S.CardImage source={logoSm} />
@@ -30,7 +46,7 @@ const AddCard: React.FC = () => {
           </S.CardTop>
           <S.CardBottom>
             <S.CardText>{name}</S.CardText>
-            <S.CardText>1234 5678 908</S.CardText>
+            <S.CardText>{number}</S.CardText>
           </S.CardBottom>
         </S.Card>
         <S.Label>Full Name</S.Label>
@@ -45,8 +61,9 @@ const AddCard: React.FC = () => {
           <S.CardInput
             keyboardType="number-pad"
             value={number}
-            onChangeText={setNumber}
+            onChangeText={changeNumber}
             onFocus={() => setFocused('number')}
+            maxLength={19}
           />
           <S.CardImage source={camera} />
         </S.CardInputWrapper>
@@ -56,9 +73,10 @@ const AddCard: React.FC = () => {
             <S.Input
               keyboardType="number-pad"
               value={exp}
-              onChangeText={setExp}
+              onChangeText={changeExp}
               onFocus={() => setFocused('exp')}
               focused={focused === 'exp'}
+              maxLength={9}
             />
           </S.ExpWrapper>
           <S.CvvWrapper>
@@ -69,12 +87,13 @@ const AddCard: React.FC = () => {
               onChangeText={setCvv}
               onFocus={() => setFocused('cvv')}
               focused={focused === 'cvv'}
+              maxLength={3}
             />
           </S.CvvWrapper>
         </S.ExpCvvWrapper>
         <Button onPress={() => navigate('CurrentLocation')}>Add Card</Button>
-      </S.Container>
-    </>
+      </S.Inner>
+    </S.Container>
   );
 };
 

@@ -20,14 +20,14 @@ interface ILatLng {
 
 const Map: React.FC = () => {
   const [latLng, setLatLng] = useState<ILatLng>({
-    latitude: -19,
-    longitude: -45,
+    latitude: -19.916483,
+    longitude: -43.935129,
   });
 
   const navigation = useNavigation();
   let mapRef: MapView | null = null;
 
-  useEffect(() => {
+  /* useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       ({ coords: { latitude, longitude } }) => {
         setLatLng({ latitude, longitude });
@@ -41,7 +41,7 @@ const Map: React.FC = () => {
         maximumAge: 1000,
       },
     );
-  }, []);
+  }, []); */
 
   function centerMap() {
     mapRef?.animateToRegion(

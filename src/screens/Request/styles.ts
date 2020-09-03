@@ -16,14 +16,6 @@ export const Map = styled(MapView)`
   flex: 1;
 `;
 
-export const Label = styled.View`
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  padding: 3px 5px;
-  border-radius: 10px;
-`;
-
 export const Bottom = styled.View`
   position: absolute;
   bottom: 0;

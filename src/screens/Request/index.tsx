@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { Text } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
@@ -74,7 +74,6 @@ const Request: React.FC = () => {
 
       <S.Bottom>
         <LinearGradient
-          // Background Linear Gradient
           colors={['rgba(255,255,255, 0.2)', 'rgba(255,255,255, 0.9)', '#fff']}
           style={{
             position: 'absolute',
