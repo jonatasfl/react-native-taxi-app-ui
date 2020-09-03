@@ -4,6 +4,10 @@ import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 import { ThemeProps } from 'theme';
 
+interface TitleProps extends ThemeProps {
+  bold?: boolean;
+}
+
 export const Container = styled.View`
   flex-direction: row;
   align-items: center;
@@ -25,8 +29,9 @@ export const Center = styled.View`
   width: 70%;
 `;
 
-export const Title = styled.Text<ThemeProps>`
-  font-family: ${({ theme }) => theme.font.regular};
+export const Title = styled.Text<TitleProps>`
+  font-family: ${({ theme, bold }) =>
+    bold ? theme.font.bold : theme.font.regular};
   font-size: ${hp('4%')}px;
   color: ${({ theme }) => theme.color.primary};
 `;

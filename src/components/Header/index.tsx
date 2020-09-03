@@ -10,9 +10,14 @@ import * as S from './styles';
 interface Props {
   title?: string;
   transparentButton?: boolean;
+  boldPosition?: number;
 }
 
-const Header: React.FC<Props> = ({ title, transparentButton = true }) => {
+const Header: React.FC<Props> = ({
+  title,
+  transparentButton = true,
+  boldPosition = -1,
+}) => {
   const { goBack } = useNavigation();
 
   return (
@@ -20,7 +25,18 @@ const Header: React.FC<Props> = ({ title, transparentButton = true }) => {
       <S.Left>
         <Button icon={back} transparent={transparentButton} onPress={goBack} />
       </S.Left>
-      <S.Center>{title && <S.Title>{title}</S.Title>}</S.Center>
+      <S.Center>
+        {title && boldPosition === -1 && <S.Title>{title}</S.Title>}
+        {title && boldPosition >= 0 && (
+          <S.Title>
+            {title.split(' ').map((word, index) => (
+              <S.Title key={Math.random()} bold={index === boldPosition}>
+                {`${word} `}
+              </S.Title>
+            ))}
+          </S.Title>
+        )}
+      </S.Center>
       <S.Right />
     </S.Container>
   );

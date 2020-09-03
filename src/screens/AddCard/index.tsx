@@ -21,7 +21,7 @@ const AddCard: React.FC = () => {
 
   return (
     <>
-      <Header title="Add Card" />
+      <Header title="Add Card" boldPosition={1} />
       <S.Container>
         <S.Card>
           <S.CardTop>
