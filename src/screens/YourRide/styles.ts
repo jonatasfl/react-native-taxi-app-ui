@@ -15,7 +15,7 @@ export const Container = styled.KeyboardAvoidingView`
 export const InnerContainer = styled.ScrollView.attrs({
   contentContainerStyle: { alignItems: 'center' },
 })`
-  padding-top: ${Constants.statusBarHeight + 20}px;
+  padding-top: 20px;
   padding-bottom: 20%;
 `;
 
@@ -26,7 +26,7 @@ export const InfoContainer = styled.View<ThemeProps>`
   border-bottom-width: 1px;
   border-bottom-color: ${({ theme }) => theme.color.gray};
   margin-top: 1%;
-  padding: ${`${hp('8%')}px 0 28px 0`};
+  padding: 0 0 28px 0;
 `;
 
 export const Description = styled.Text<IDescProps>`

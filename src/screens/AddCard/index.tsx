@@ -5,6 +5,7 @@ import logoSm from '../../assets/logo-sm.png';
 import visa from '../../assets/visa-white.png';
 import camera from '../../assets/camera.png';
 
+import Header from '../../components/Header';
 import Button from '../../components/Button';
 
 import * as S from './styles';
@@ -19,58 +20,61 @@ const AddCard: React.FC = () => {
   const { navigate } = useNavigation();
 
   return (
-    <S.Container>
-      <S.Card>
-        <S.CardTop>
-          <S.CardImage source={logoSm} />
-          <S.CardImage source={visa} />
-        </S.CardTop>
-        <S.CardBottom>
-          <S.CardText>{name}</S.CardText>
-          <S.CardText>1234 5678 908</S.CardText>
-        </S.CardBottom>
-      </S.Card>
-      <S.Label>Full Name</S.Label>
-      <S.Input
-        value={name}
-        onChangeText={setName}
-        onFocus={() => setFocused('name')}
-        focused={focused === 'name'}
-      />
-      <S.Label>Card Number</S.Label>
-      <S.CardInputWrapper focused={focused === 'number'}>
-        <S.CardInput
-          keyboardType="number-pad"
-          value={number}
-          onChangeText={setNumber}
-          onFocus={() => setFocused('number')}
+    <>
+      <Header title="Add Card" />
+      <S.Container>
+        <S.Card>
+          <S.CardTop>
+            <S.CardImage source={logoSm} />
+            <S.CardImage source={visa} />
+          </S.CardTop>
+          <S.CardBottom>
+            <S.CardText>{name}</S.CardText>
+            <S.CardText>1234 5678 908</S.CardText>
+          </S.CardBottom>
+        </S.Card>
+        <S.Label>Full Name</S.Label>
+        <S.Input
+          value={name}
+          onChangeText={setName}
+          onFocus={() => setFocused('name')}
+          focused={focused === 'name'}
         />
-        <S.CardImage source={camera} />
-      </S.CardInputWrapper>
-      <S.ExpCvvWrapper>
-        <S.ExpWrapper>
-          <S.Label>Expiry Date</S.Label>
-          <S.Input
+        <S.Label>Card Number</S.Label>
+        <S.CardInputWrapper focused={focused === 'number'}>
+          <S.CardInput
             keyboardType="number-pad"
-            value={exp}
-            onChangeText={setExp}
-            onFocus={() => setFocused('exp')}
-            focused={focused === 'exp'}
+            value={number}
+            onChangeText={setNumber}
+            onFocus={() => setFocused('number')}
           />
-        </S.ExpWrapper>
-        <S.CvvWrapper>
-          <S.Label>CVV</S.Label>
-          <S.Input
-            keyboardType="number-pad"
-            value={cvv}
-            onChangeText={setCvv}
-            onFocus={() => setFocused('cvv')}
-            focused={focused === 'cvv'}
-          />
-        </S.CvvWrapper>
-      </S.ExpCvvWrapper>
-      <Button onPress={() => navigate('CurrentLocation')}>Add Card</Button>
-    </S.Container>
+          <S.CardImage source={camera} />
+        </S.CardInputWrapper>
+        <S.ExpCvvWrapper>
+          <S.ExpWrapper>
+            <S.Label>Expiry Date</S.Label>
+            <S.Input
+              keyboardType="number-pad"
+              value={exp}
+              onChangeText={setExp}
+              onFocus={() => setFocused('exp')}
+              focused={focused === 'exp'}
+            />
+          </S.ExpWrapper>
+          <S.CvvWrapper>
+            <S.Label>CVV</S.Label>
+            <S.Input
+              keyboardType="number-pad"
+              value={cvv}
+              onChangeText={setCvv}
+              onFocus={() => setFocused('cvv')}
+              focused={focused === 'cvv'}
+            />
+          </S.CvvWrapper>
+        </S.ExpCvvWrapper>
+        <Button onPress={() => navigate('CurrentLocation')}>Add Card</Button>
+      </S.Container>
+    </>
   );
 };
 

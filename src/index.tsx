@@ -48,15 +48,7 @@ const Index: React.FC = () => {
         >
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Verification" component={Verification} />
-          <Stack.Screen
-            name="AddCard"
-            component={AddCard}
-            options={{
-              headerShown: true,
-              headerTitle: 'Add Card',
-              headerLeft: props => <BackButton transparent {...props} />,
-            }}
-          />
+          <Stack.Screen name="AddCard" component={AddCard} />
           <Stack.Screen name="CurrentLocation" component={CurrentLocation} />
           <Stack.Screen
             name="SelectDestination"
@@ -71,15 +63,7 @@ const Index: React.FC = () => {
               headerLeft: props => <BackButton {...props} />,
             }}
           />
-          <Stack.Screen
-            name="YourRide"
-            component={YourRide}
-            options={{
-              headerShown: true,
-              headerTitle: 'Your Ride',
-              headerLeft: props => <BackButton transparent {...props} />,
-            }}
-          />
+          <Stack.Screen name="YourRide" component={YourRide} />
         </Stack.Navigator>
       </NavigationContainer>
     </ThemeProvider>

@@ -14,7 +14,7 @@ const Verification: React.FC = () => {
   const codeRef3 = useRef(null);
   const codeRef4 = useRef(null);
 
-  function focusNext(ref: RefObject<TextInput | undefined>): void {
+  function focusNext(ref: RefObject<TextInput | null>) {
     ref.current?.focus();
   }
 

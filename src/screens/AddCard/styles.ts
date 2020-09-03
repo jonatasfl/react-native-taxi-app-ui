@@ -9,7 +9,7 @@ interface InputProps extends ThemeProps {
 
 export const Container = styled.KeyboardAvoidingView`
   flex: 1;
-  padding: ${Constants.statusBarHeight + 100}px 10% 5% 10%;
+  padding: 40px 10% 5% 10%;
 `;
 
 export const Card = styled.View`
