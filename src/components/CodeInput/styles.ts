@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { TextInputProps, TextInput } from 'react-native';
 
 import { ThemeProps } from '../../theme';
 
@@ -11,10 +12,10 @@ export const Container = styled.View<ThemeProps>`
   border-radius: ${55 / 2}px;
 `;
 
-export const Input = styled.TextInput.attrs({ keyboardType: 'numeric' })`
+export const Input = styled.TextInput<ThemeProps>`
   text-align: center;
   width: 55px;
   height: 55px;
   font-size: 18px;
-  color: ${({ theme }: ThemeProps) => theme.color.primary};
+  color: ${({ theme }) => theme.color.primary};
 `;

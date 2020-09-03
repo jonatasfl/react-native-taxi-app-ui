@@ -10,9 +10,9 @@ import * as S from './styles';
 
 const Verification: React.FC = () => {
   const navigation = useNavigation();
-  const codeRef2 = useRef<TextInput>();
-  const codeRef3 = useRef<TextInput>();
-  const codeRef4 = useRef<TextInput>();
+  const codeRef2 = useRef(null);
+  const codeRef3 = useRef(null);
+  const codeRef4 = useRef(null);
 
   function focusNext(ref: RefObject<TextInput | undefined>): void {
     ref.current?.focus();
