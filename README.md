@@ -23,7 +23,7 @@ Clone this repo:
 
 Install Dependencies:
 
-    yarn
+    yarn install
     // or npm install
 
 Run the Metro Bundler:
