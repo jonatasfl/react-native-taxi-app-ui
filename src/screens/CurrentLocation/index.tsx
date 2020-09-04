@@ -27,7 +27,7 @@ const Map: React.FC = () => {
   const navigation = useNavigation();
   let mapRef: MapView | null = null;
 
-  /* useEffect(() => {
+  useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       ({ coords: { latitude, longitude } }) => {
         setLatLng({ latitude, longitude });
@@ -41,7 +41,7 @@ const Map: React.FC = () => {
         maximumAge: 1000,
       },
     );
-  }, []); */
+  }, []);
 
   function centerMap() {
     mapRef?.animateToRegion(
